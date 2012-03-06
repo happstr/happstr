@@ -1,0 +1,15 @@
+install rvm and ruby like this:
+
+bash -s stable < <(curl -s https://raw.github.com/wayneeseguin/rvm/master/binscripts/rvm-installer)
+source ~/.bash_profile
+rvm install 1.9.2
+
+checkout repo and install shitz:
+
+git clone git@github.com:happstr/happstr.git
+cd happstr
+gem install bundler
+bundle install
+
+run sinatra:
+rackup
