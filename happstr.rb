@@ -8,9 +8,7 @@ class Happstr < Sinatra::Base
   # serve static content
 
   get '/' do
-    'Hello world!'
-
-    # serve static page
+    send_file File.join(settings.public_folder, 'html/index.html')
   end
 
 
