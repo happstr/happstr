@@ -82,6 +82,7 @@ a:hover {
   -moz-transition: all 0.3s linear;
   -o-transition: all 0.3s linear;
   transition: all 0.3s linear;
+  width: 100.3%;
 }
 
 #mc-embedded-subscribe:hover {
@@ -110,6 +111,7 @@ a:hover {
 
 label {
   display: block;
+  color: #666;
 }
 
 input {
