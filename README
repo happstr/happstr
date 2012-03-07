@@ -11,5 +11,13 @@ cd happstr
 gem install bundler
 bundle install
 
+
+Install Mongo Datastore:
+(if you have no brew, install like this:
+  /usr/bin/ruby -e "$(curl -fsSL https://raw.github.com/gist/323731)"
+)
+
+brew install mongodb
+
 run sinatra:
 rackup
