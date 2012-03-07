@@ -1,1 +1,73 @@
-what?
+@font-face {
+	font-family: 'londrina';
+	src: url('/fonts/londrinasolid-regular-webfont.eot?#iefix') format('embedded-opentype'), 
+	     url('/fonts/londrinasolid-regular-webfont.woff') format('woff'), 
+	     url('/fonts/londrinasolid-regular-webfont.ttf')  format('truetype'),
+	     url('/fonts/londrinasolid-regular-webfont.svg#svgFontName') format('svg');
+	}
+
+body {
+  background: url(/img/launch/bg.png) #d7eff4;
+  font-family: 'londrina', helvetica, arial;
+}
+
+h1 {
+  text-indent: -9999px;
+  display: none;
+}
+
+.logo {
+  display: block;
+  margin: 0 auto;
+}
+
+.content {
+  width: 40em;
+  margin: 2em auto;
+  background: #FFF;
+  border-radius: 5px;
+  border: 1px solid #94bfc7;
+}
+
+a, label {
+  color: #BC327D;
+}
+
+
+#mc-embedded-subscribe {
+  background: #BC327D;
+  color: #FFF;
+  font-family: 'londrina', helvetica, sans-serif;
+  text-shadow: 0 -1px -0 #bc327d;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 1.7em;
+  padding: .5em;
+  border: 1px solid #bc327d;
+}
+
+.stuff {
+  padding: 0 2em;
+}
+
+.mission {
+  font-size: 1.4em;
+  color: #333;
+  margin-top: 1em;
+  line-height: 1.5em;
+  
+}
+
+label {
+  display: block;
+}
+
+input {
+  border: 1px solid #CCC;
+  width: 97%;
+  font-size: 18px;
+  padding: 1em .5em;
+  margin-bottom: 1em;
+  border-radius: 5px;
+}
+
