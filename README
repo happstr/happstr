@@ -8,6 +8,8 @@ checkout repo and install shitz:
 
 git clone git@github.com:happstr/happstr.git
 cd happstr
+echo 'rvm ruby-1.9.2@happstr --create' > .rvmrc
+cd ../happstr
 gem install bundler
 bundle install
 
