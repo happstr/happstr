@@ -1,5 +1,40 @@
 <html>
+<title>Happstr</title>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script type="text/javascript" src="vendor/js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="vendor/js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="js/Happstr.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+	Navigate.construct();
+});
+</script>
+
   <body>
-    <h1>I'm Happstr. I will make you happy! Awesomesauce.</h1>
+    <div id="page-wrapper">
+		<div id="nav-wrapper">
+			<div id="button-wrapper">
+				<ul class="buttons-main">
+					<li><a href="#" onclick="Navigate.navigateTo(0); return false;">I'm Happy</a></li>
+					<li><a href="#" onclick="Navigate.navigateTo(1); return false;">Find Happiness</a></li>
+				</ul>
+			</div>
+		</div>
+		<div id="content-wrapper">
+			<ul class="pages">
+				<li class="im-happy" id="im-happy" >
+					<div id="retain">
+						<h2>I'M HAPPY</h2>
+					</div>
+				</li>
+				<li class="map-holder">
+					<div id="map">
+						test
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
   </body>
 </html>
