@@ -1,0 +1,139 @@
+@font-face {
+	font-family: 'londrina';
+	src: url('/fonts/londrinasolid-regular-webfont.eot?#iefix') format('embedded-opentype'), 
+	     url('/fonts/londrinasolid-regular-webfont.woff') format('woff'), 
+	     url('/fonts/londrinasolid-regular-webfont.ttf')  format('truetype'),
+	     url('/fonts/londrinasolid-regular-webfont.svg#svgFontName') format('svg');
+	}
+
+body {
+  background: url(/img/launch/bg.png) #d7eff4;
+  font-family: 'londrina', helvetica, arial;
+}
+
+h1 {
+  text-indent: -9999px;
+  display: none;
+}
+
+.social {
+  padding: 2em 0 2em 0;
+}
+
+ul {
+  list-style-type: none;
+  text-align: center;
+  margin-right: 3em;
+}
+
+ul li {
+  display: inline;
+  padding: 0 1em;
+}
+
+.logo {
+  display: block;
+  margin: 0 auto;
+}
+
+.content {
+  width: 40em;
+  margin: 2em auto 1em auto;
+  background: #FFF;
+  border-radius: 5px;
+  border: 1px solid #94bfc7;
+}
+
+label {
+  color: #333;
+}
+
+a {
+  color: #df56a0;
+  text-decoration: none;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+
+a:hover {
+  color: #BC327D;
+  cursor: pointer;
+}
+
+
+.asterisk {
+  color: #BC327D;
+}
+
+#mc-embedded-subscribe {
+  background: #BC327D;
+  color: #FFF;
+  font-family: 'londrina', helvetica, sans-serif;
+  text-shadow: 0 -1px -0 #bc327d;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 1.7em;
+  padding: .5em;
+  margin-bottom: em;
+  border: 1px solid #bc327d;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+  width: 100.3%;
+}
+
+#mc-embedded-subscribe:hover {
+  background: #df56a0;
+  cursor: pointer;
+}
+
+#mce-EMAIL, #mce-HAPPY {
+  -moz-box-shadow: inset 0 0 5px #CCC;
+  -webkit-box-shadow: inset 0 0 5px #CCC;
+  box-shadow: inner 0 0 5px #CCC;
+}
+
+.stuff {
+  padding: 0 2em;
+}
+
+.mission {
+  font-size: 1.4em;
+  color: #333;
+  margin-top: 1em;
+  line-height: 1.5em;
+  padding: .2em 0 .5em 0;
+  
+}
+
+label {
+  display: block;
+  color: #666;
+}
+
+input {
+  border: 1px solid #CCC;
+  width: 97%;
+  font-size: 18px;
+  padding: 1em .5em;
+  margin-bottom: 1em;
+  border-radius: 5px;
+}
+
+footer {
+  font-family: Helvetica, arial, sans-serif;
+  color: #3e7b86;
+  text-shadow: 0 1px 0 #FFF;
+  font-size: .8em;
+  margin: 0 auto 2em auto;
+  width: 50em;
+}
+
+.moar {
+  padding-bottom: 2em;
+  color: #666;
+}
+
