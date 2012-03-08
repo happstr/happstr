@@ -61,6 +61,14 @@ a, a:link, a:hover, a:active, a:visited{
 	outline: none !important;
 }
 
+@font-face {
+	font-family: 'londrina';
+	src: url('/fonts/londrinasolid-regular-webfont.eot?#iefix') format('embedded-opentype'), 
+	     url('/fonts/londrinasolid-regular-webfont.woff') format('woff'), 
+	     url('/fonts/londrinasolid-regular-webfont.ttf')  format('truetype'),
+	     url('/fonts/londrinasolid-regular-webfont.svg#svgFontName') format('svg');
+}
+
 /**************************************************************************
 * BEGIN REUSABLE STYLES
 */
@@ -88,39 +96,74 @@ body {
 
 #page-wrapper #nav-wrapper {
     width:100%;
-    height:30px;
-    border-bottom: 1px solid #b5b3b3;
-    padding-top:65px;
+    height:93px;
+    height:153px;
+    padding-top:10px;
+    border-bottom:3px solid #ffde15;
+}
+
+#page-wrapper #nav-wrapper #logo-wrapper {
+    height:86px;
+    width:100%;
+    background: url(../img/logo.jpg) top center no-repeat;
+}
+
+#page-wrapper #nav-wrapper #rule {
+    width:200px;
+    background: #d7eef4;
+    margin:0 auto;
+    display:block;
+    height:1px;
+    margin-top:10px;
 }
 
 #page-wrapper #nav-wrapper #button-wrapper {
-    height:30px;
+    height:50px;
     width:100%;
-    background-color:#000;
+    /*background-color:#000;*/
 }
 
 #page-wrapper #nav-wrapper #button-wrapper ul.buttons-main {
-    width:240px;
-    height:20px;
-    color:#d402c8;
+    width:400px;
+    height:30px;
+    /*background-color:#d402c8;*/
     margin:0 auto;
+    padding-top:20px;
 }
 
 #page-wrapper #nav-wrapper #button-wrapper ul.buttons-main li {
-    width:120px;
+    width:200px;
     float:left;
     text-align:center;
+}
+
+a.nav-link:link, a.nav-link:active, a.nav-link:visited, a.nav-link:hover {
+    font-size:1.25em;
+    color:#df55a0;
+    text-decoration:none;
+    padding-left:14px;
+    padding-right:14px;
+    padding-top:3px;
+    padding-bottom:3px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    font-family: 'lucida grande', lucida sans, arial, sans-serif;
+   
+}
+
+.active {
+     background-color:#fbebee;
 }
 
 #page-wrapper #content-wrapper {
     width:100%;
     overflow: hidden;
     position:relative;
-    background:#bfedeb;
+   /* background:#bfedeb;*/
 }
 
 #page-wrapper #content-wrapper ul.pages {
-    height:411px;
+    height:430px;
     left:0px;
     position:relative;
     width:30000px;
@@ -128,7 +171,7 @@ body {
 
 #page-wrapper #content-wrapper ul.pages li {
     width:100%;
-    height:411px;
+    height:430px;
     overflow: hidden;
     float:left;
 }
@@ -143,14 +186,72 @@ body {
 #page-wrapper #content-wrapper ul.pages li.im-happy #retain {
     width:70%;
     margin: 0 auto;
-    margin-top:90px;
+    margin-top:20px;
     text-align: center;
 }
 
 #page-wrapper #content-wrapper ul.pages li.im-happy h2 {
-    font-size: 2em;
-    color:#333;
-    font-size:110px;
+    color:#25aae2;
+    font-size:90px;
+    font-family: 'londrina', helvetica, sans-serif;
+    line-height:95px;
+    margin-bottom:10px;
+}
+
+#page-wrapper #content-wrapper ul.pages li.im-happy span {
+    font-size:120px;
+    font-family: 'londrina', helvetica, sans-serif;
+}
+/**************************************************************************
+* BEGIN FOOTER STYLES
+*/
+
+#footer-wrapper {
+    height:145px;
+    border-top:3px solid #ffde15;
+    width:100%;
+    
+}
+
+#footer-wrapper ul.footer {
+    width:250px;
+    margin: 0 auto;
+    margin-top:20px;
+    margin-bottom:20px;
+    height:100px;
+}
+
+#footer-wrapper ul.footer li {
+    float:left;
+    padding-top:5px;
+    padding-bottom:5px;
+    width:250px;
+    text-align:center;
+}
+
+a.footer-link:link, a.footer-link:active, a.footer-link:visited, a.footer-link:hover {
+    color:#25aae2;
+    font-size:14px;
+    text-decoration:none;
+    width:170px;
+    display:block;
+    padding-bottom:5px;
+    text-align:center;
+    margin:0 auto;
+    font-family: 'lucida grande', lucida sans, arial, sans-serif;
+}
+
+a.find-happy-place {
+    width:250px;
+    height:37px;
+    background: url(../img/happy_place.jpg) top center no-repeat;
+    display:block;
+    border-bottom: solid 1px #25aae2;
+    padding-bottom:5px;
+}
+
+.link-border {
+border-bottom: solid 1px #25aae2;
 }
 
 /**************************************************************************
@@ -162,8 +263,20 @@ body {
 }
 
 #page-wrapper #content-wrapper ul.pages li.map-holder #map {
-    height:411px;
+    height:430px;
     width:100%;
     background-color:#000;
 }
+
+/**************************************************************************
+* BEGIN MEDIA QUERIES
+*/
+
+@media all and (max-width: 520px) {
+  /*body {
+    background: #ccc;
+  }*/
+}
+
+
 

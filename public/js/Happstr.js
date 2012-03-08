@@ -42,7 +42,7 @@ var Navigate = (function (obj) {
 	    animWidth = $('body, html').width();
 	    calcAnimation = - (animWidth * targetIdx);
 	 
-	    $('ul.pages').animate({left: calcAnimation}, 300);
+	    $('ul.pages').animate({left: calcAnimation}, 200);
 	        idx = targetIdx;
 	        _this.idx = targetIdx;
 	}

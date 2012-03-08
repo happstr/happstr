@@ -10,6 +10,10 @@ class Happstr < Sinatra::Base
   get '/' do
     send_file File.join(settings.public_folder, 'html/index.html')
   end
+  
+  get '/landing' do
+    send_file File.join(settings.public_folder, 'html/landing.html')
+  end
 
 
   # api
