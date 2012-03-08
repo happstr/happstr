@@ -46,6 +46,29 @@ var Navigate = (function (obj) {
       $(window).resize(function() {
           sizeContent();
       });
+
+      // setup navigation etc
+      $('.buttons-main .create-happy').click(function(ev) {
+        ev.preventDefault();
+        Navigate.navigateTo(0);
+        reset();
+        $('.buttons-main .find-happy').removeClass('active');
+        $('.buttons-main .create-happy').addClass('active');
+      });
+
+      $('.buttons-main .find-happy').click(function(ev) {
+        ev.preventDefault();
+        Navigate.navigateTo(10);
+        reset();
+        $('.buttons-main .create-happy').removeClass('active');
+        $('.buttons-main .find-happy').addClass('active');
+      });
+
+      $('.do-again').click(function(ev) {
+        ev.preventDefault();
+        Navigate.navigateTo(0);
+        reset();
+      });
   }
 
   _this.navigateTo = function(targetIdx) {
@@ -73,6 +96,11 @@ var HappyProcess = (function (obj) {
   _this = obj;
   _this.checkinID;
   _this.position;
+
+  _this.reset = function() {
+    _this.checkinID = null;
+    _this.position = null;
+  }
 
   function postHappy(lat, lon) {
     $.post('/api/checkins',
@@ -151,4 +179,11 @@ var HappyProcess = (function (obj) {
 
  return obj;
 }(HappyProcess || {}));
+
+var reset = function() {
+  HappyProcess.reset();
+
+  $('.because-enter').show().val("");
+  $('.because-success').hide();
+}
 
