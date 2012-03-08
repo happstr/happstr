@@ -106,7 +106,7 @@ var Navigate = (function (obj) {
               function(msg) {
                 $.each(msg, function(key, val) {
                   // console.log(val.source[0], val.source[1]);
-                  var latLng = new google.maps.LatLng(val.source[1], val.source[0]);
+                  var latLng = new google.maps.LatLng(val.source[0], val.source[1]);
                   var marker = new google.maps.Marker({position:latLng});
                   _this.markers.push(marker);
               })
