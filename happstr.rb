@@ -24,11 +24,10 @@ class Happstr < Sinatra::Base
     include Mongoid::Spacial::Document
 
     field :created_at, :type => DateTime
-    field :location,   :type => Array, :spacial => { return_array: true }
+    field :source,     :type => Array, :spacial => { return_array: true }
 
     spacial_index :source
   end
-  Checkin.spacial_index 'collect_from.location'
 
   #
   # Routes
@@ -38,28 +37,7 @@ class Happstr < Sinatra::Base
   end
 
   get '/api/checkins' do
-
-    #checkin_old = Checkin.create(
-      #created_at: Time.now,
-      #location:   {:lat => 1.106667, :lng => 2.935833},
-      #comment:    "Far away checkin"
-    #)
-
-    #checkin_main = Checkin.create(
-      #created_at: Time.now,
-      #location:   {:lat => 44, :lng => -73},
-      #comment:    "on point Checking"
-    #)
-
-    #checkin_near = Checkin.create(
-      #created_at: Time.now,
-      #location:   {:lat => 41.106667, :lng => -72.935833},
-      #comment:    "Near checkin"
-    #)
-
-    #puts "Number of total checkings: " + Checkin.count.inspect
-    puts "Number of total checkings: " + Checkin.all.to_a.inspect
-    puts "Checkins around my initial checking: " + Checkin.where(:location.near => [[-73,44], 10000000]).count.inspect
+    Checkin.where(:source.near => [[30.264924, -97.741413], 10000000]).to_a.to_json
 
     # parse parameters
     # fail if no params with it that make sense
@@ -85,7 +63,7 @@ class Happstr < Sinatra::Base
   # Development helpers
 
   get '/dev/setup' do
-    Checkin.create_indexes 'location'
+    Checkin.create_indexes
     #Checkin.spacial_index 'collect_from.location'
 
     "done"
@@ -99,7 +77,7 @@ class Happstr < Sinatra::Base
         unless (lat*lon % 3 == 0)
           Checkin.create(
             created_at: Time.now,
-            location:   {:lat => downtown_austin[0] + lat * 0.001, :lng => downtown_austin[1] + lon * 0.001},
+            source:   {:lat => downtown_austin[0] + lat * 0.001, :lng => downtown_austin[1] + lon * 0.001},
             comment:    "Downtown Austin #{lat} #{lon}"
           )
         end
