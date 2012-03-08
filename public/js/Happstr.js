@@ -59,12 +59,12 @@ var Navigate = (function (obj) {
       $('.buttons-main .find-happy').click(function(ev) {
         ev.preventDefault();
         Navigate.navigateTo(2);
-        reset();
         $('.buttons-main .create-happy').removeClass('active');
         $('.buttons-main .find-happy').addClass('active');
+        reset();
       });
 
-      $('.do-again').click(function(ev) {
+      $('.do-again-link').click(function(ev) {
         ev.preventDefault();
         Navigate.navigateTo(0);
         reset();
@@ -183,7 +183,8 @@ var HappyProcess = (function (obj) {
 var reset = function() {
   HappyProcess.reset();
 
-  $('.because-enter').show().val("");
   $('.because-success').hide();
+  $('.because-enter').show();
+  $('.happy-input').val("");
 }
 
