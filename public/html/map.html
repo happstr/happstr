@@ -1,0 +1,62 @@
+<html>
+  <head>
+    <title>Happstr Map</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <style type="text/css">
+      html { height: 100% }
+      body { height: 100%; margin: 0; padding: 0 }
+      #map_canvas { height: 100% }
+    </style>
+    <script type="text/javascript"
+      src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDduiCZ1KHR48T5zOIGMzrhK7teVckQrOo&sensor=true">
+    </script>
+    <script 
+      src="js/markerclusterer.js" type="text/javascript">
+    </script> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
+    <script type="text/javascript">
+      function initialize() {
+        var myOptions = {
+          center: new google.maps.LatLng(30.270776, -97.744813),
+          zoom: 8,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        map = new google.maps.Map(document.getElementById("map_canvas"),
+            myOptions);
+
+      if(navigator.geolocation) {
+        console.log("can get geo");
+        function hasPosition(position) {
+            var point = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+            map.setCenter(point);
+           
+        }
+        navigator.geolocation.getCurrentPosition(hasPosition);
+      } else {
+        console.log("can't get geo");
+      }
+
+      var markers = [];
+      // http://happstr.com/api/checkins?lat=123&lon=123&range=100000
+      /*$.ajax({
+              url:'api/checkins?lat=123&lon=123&range=100000', 
+              complete: function(msg) {
+                console.log(msg);
+                $.each(msg, function(key, val) {
+                  //console.log(key+" | "+val);
+                  var latLng = new google.maps.LatLng(30.270776+Math.floor(Math.random()*2), -97.744813+Math.floor(Math.random()*11));
+                  var marker = new google.maps.Marker({position:latLng});
+                  markers.push(marker);
+              })
+            }
+        });*/
+      var markerCluster = new MarkerClusterer(map, markers, {"imagePath":"/happstr/images/m"});
+    }
+    </script>
+  </head>
+   <body onload="initialize()">
+    <div id="map_canvas" style="width:100%; height:100%"></div>
+  </body>
+
+</html>
