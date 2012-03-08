@@ -37,20 +37,39 @@ class Happstr < Sinatra::Base
   end
 
   get '/api/checkins' do
-    Checkin.where(:source.near => [[30.264924, -97.741413], 10000000]).to_a.to_json
+    # validate parameters
+    lat = params[:lat]
+    lon = params[:lon]
+    range = (params[:range] || 500).to_i
 
-    # parse parameters
-    # fail if no params with it that make sense
+    # austin debug
+    #lat, lon = [30.264924, -97.741413]
 
-    # fetch from storage
-    # output json
+    unless lat && (-180..180).cover?(lat.to_i) &&
+           lon && (-180..180).cover?(lon.to_i)
+           #range && (0..10000).cover?(range)
+      "Uhm ... you need to pass ?lat=&long= betwen -180..180 and optional range"
+    else
+      Checkin.where(:source.near => [[lat, lon], range]).to_a.to_json
+    end
   end
 
 
   post '/api/checkins' do
-    # check data coming in if makes sense
+    lat = params[:lat]
+    lon = params[:lon]
+    comment = params[:comment]
 
-    # put into data store
+    unless lat && (-180..180).cover?(lat.to_i) &&
+           lon && (-180..180).cover?(lon.to_i)
+      "Uhm ... you need to pass ?lat=&long= betwen -180..180 and optional range"
+    else
+      Checkin.create(
+        created_at: Time.now,
+        source:     {lat: lat, lon: lon},
+        comment:    comment
+      )
+    end
   end
 
   put '/api/checkins/:id' do
@@ -64,7 +83,6 @@ class Happstr < Sinatra::Base
 
   get '/dev/setup' do
     Checkin.create_indexes
-    #Checkin.spacial_index 'collect_from.location'
 
     "done"
   end
