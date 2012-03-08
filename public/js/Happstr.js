@@ -92,7 +92,8 @@ var HappyProcess = (function (obj) {
           comment: because
         },
         success: function(data) {
-           // do something
+          $('.because-enter').hide();
+          $('.because-success').show();
         }
       })
     } else {

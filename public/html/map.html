@@ -38,7 +38,7 @@
       }
 
       var markers = [];
-      $.getJSON('api/checkins?lat=123&lon=123&range=100000', 
+      $.getJSON('api/checkins?lat=40&lon=-74&range=100000', 
                 function(msg) {
                   $.each(msg, function(key, val) {
                     console.log(val.source[0], val.source[1]);
