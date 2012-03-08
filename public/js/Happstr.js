@@ -83,19 +83,23 @@ var HappyProcess = (function (obj) {
     );
 	}
 	
-	function postBecause() {
-	    /*$.post('/api/checkins', { 
-	        lat: lat,
-	        lon: lon
-	    },
-	    function(data) {
-            $('.because-enter').hide();
-            $('.because-enter').show();
-            
-        });*/
-        $('.because-enter').hide();
-        $('.because-success').show();
-	}
+	function postBecause(because) {
+    if(_this.checkinID) {
+      $.ajax({
+        url: '/api/checkins/' + _this.checkinID,
+        type: "PUT",
+        data: {
+          comment: because
+        },
+        success: function(data) {
+           // do something
+        }
+      })
+    } else {
+      // look every second if posting the because is done already
+      setTimeout(function() { postBecause(because) }, 1000);
+    }
+  }
 
   function noPosition() {
     // well, do something
@@ -140,7 +144,7 @@ var HappyProcess = (function (obj) {
 	    });
 	    
 	    $('.send-because').click(function() {
-	        postBecause();
+	        postBecause($('.happy-input').val());
 	    });
 	}
 	
