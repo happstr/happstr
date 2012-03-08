@@ -40,6 +40,10 @@ class Happstr < Sinatra::Base
     send_file File.join(settings.public_folder, 'html/beta.html')
   end
 
+  get '/map' do
+    send_file File.join(settings.public_folder, 'html/map.html')
+  end
+
   get '/api/checkins' do
     # validate parameters
     lat = params[:lat]
