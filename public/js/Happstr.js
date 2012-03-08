@@ -6,84 +6,84 @@
 * STORE GLOBAL METHODS AND STATES UNDER THE HAPPSTER NAMESPACE
 */
 var Happstr = (function (obj) {
-	
-	_this = obj;
-	
-	//insert global js here
 
-	return obj;
+  _this = obj;
+
+  //insert global js here
+
+  return obj;
 }(Happstr || {}));
 
 /**************************************************************************
 * BEGIN MAIN NAVIGATION CLASS
 */
 var Navigate = (function (obj) {
-	
-	_this = obj; //store local scope
-	
-	_this.idx = 0; //store frame index
-	
 
-	
-	
-	function sizeContent() {
+  _this = obj; //store local scope
+
+  _this.idx = 0; //store frame index
+
+
+
+
+  function sizeContent() {
         //alert('sizecontent');
-	    pageWidth = $('body, html').width();
+      pageWidth = $('body, html').width();
         $('#content-wrapper').css({width:pageWidth});
         $('ul.pages li.frames').css({width:pageWidth});
-	}
-	
-	function setStructure(target) {
-	    if(target !==0) {
-	        $('#content-wrapper').animate({height: 900});
+  }
+
+  function setStructure(target) {
+      if(target !==0) {
+          $('#content-wrapper').animate({height: 900});
         } else {
             $('#content-wrapper').animate({height: 413});
         }
-	}
-	
-	_this.construct = function() {
-	    sizeContent();
-	    $(window).resize(function() {
-	        sizeContent();
-	    });
-	}
-	
-	_this.navigateTo = function(targetIdx) {
-	    animWidth = $('body, html').width();
-	    calcAnimation = - (animWidth * targetIdx);
-	 
-	    $('ul.pages').animate({left: calcAnimation}, 200, function(){
-	          idx = targetIdx;
-    	      _this.idx = targetIdx;
-    	      setStructure(_this.idx)
-	    });
-	      
-	}
-	
-	//insert global js here
+  }
 
-	return obj;
+  _this.construct = function() {
+      sizeContent();
+      $(window).resize(function() {
+          sizeContent();
+      });
+  }
+
+  _this.navigateTo = function(targetIdx) {
+      animWidth = $('body, html').width();
+      calcAnimation = - (animWidth * targetIdx);
+
+      $('ul.pages').animate({left: calcAnimation}, 200, function(){
+            idx = targetIdx;
+            _this.idx = targetIdx;
+            setStructure(_this.idx)
+      });
+
+  }
+
+  //insert global js here
+
+  return obj;
 }(Navigate || {}));
 
 /**************************************************************************
 * BEGIN HAPPY PROCESS CLASS
 */
 var HappyProcess = (function (obj) {
-	
-	_this = obj;
+
+  _this = obj;
   _this.checkinID;
   _this.position;
-	
-	function postHappy(lat, lon) {
+
+  function postHappy(lat, lon) {
     $.post('/api/checkins',
       function(data) {
         _this.checkinID = $.parseJSON(data)._id;
         Navigate.navigateTo(1);
       }
     );
-	}
-	
-	function postBecause(because) {
+  }
+
+  function postBecause(because) {
     if(_this.checkinID) {
       $.ajax({
         url: '/api/checkins/' + _this.checkinID,
@@ -137,21 +137,18 @@ var HappyProcess = (function (obj) {
       noPosition();
     }
   }
-	
-	_this.construct = function() {
-	    $('.send-happy').click(function() {
+
+  _this.construct = function() {
+      $('.send-happy').click(function() {
           getLocation();
-	        postHappy(1,2);
-	    });
-	    
-	    $('.send-because').click(function() {
-	        postBecause($('.happy-input').val());
-	    });
-	}
-	
-	
+          postHappy(1,2);
+      });
 
+      $('.send-because').click(function() {
+          postBecause($('.happy-input').val());
+      });
+  }
 
-	return obj;
+ return obj;
 }(HappyProcess || {}));
 
