@@ -89,7 +89,6 @@ var Navigate = (function (obj) {
     var lon = -97.744813;
 
     var myOptions = {
-      // austin
       center: new google.maps.LatLng(lat, lon),
       zoom: 8,
       mapTypeId: google.maps.MapTypeId.ROADMAP
