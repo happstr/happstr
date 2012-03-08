@@ -62,12 +62,13 @@ var Navigate = (function (obj) {
       $('.buttons-main .find-happy').click(function(ev) {
         ev.preventDefault();
         Navigate.navigateTo(2);
-        reset();
         $('.buttons-main .create-happy').removeClass('active');
         $('.buttons-main .find-happy').addClass('active');
+        reset();
+        setupMap();
       });
 
-      $('.do-again').click(function(ev) {
+      $('.do-again-link').click(function(ev) {
         ev.preventDefault();
         Navigate.navigateTo(0);
         reset();
@@ -83,6 +84,39 @@ var Navigate = (function (obj) {
             _this.idx = targetIdx;
             setStructure(_this.idx);
       });
+
+  }
+
+  function setupMap() {
+    var lat = 30.270776;
+    var lon = -97.744813;
+
+    var myOptions = {
+      center: new google.maps.LatLng(lat, lon),
+      zoom: 8,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+
+    _this.map = new google.maps.Map(
+    document.getElementById("map_canvas"), myOptions);
+
+    getMarkers(lat, lon);
+  }
+
+  function getMarkers(lat, lon) {
+    _this.markers = [];
+    $.getJSON('api/checkins?lat='+lat+'&lon='+lon+'&range=100000', 
+              function(msg) {
+                $.each(msg, function(key, val) {
+                  // console.log(val.source[0], val.source[1]);
+                  var latLng = new google.maps.LatLng(val.source[1], val.source[0]);
+                  var marker = new google.maps.Marker({position:latLng});
+                  _this.markers.push(marker);
+              })
+              var markerCluster = new MarkerClusterer(_this.map, _this.markers, {"imagePath":"img/map/p", "minimumClusterSize":1});
+            }
+    )
+
 
   }
 
@@ -186,7 +220,8 @@ var HappyProcess = (function (obj) {
 var reset = function() {
   HappyProcess.reset();
 
-  $('.because-enter').show().val("");
   $('.because-success').hide();
+  $('.because-enter').show();
+  $('.happy-input').val("");
 }
 

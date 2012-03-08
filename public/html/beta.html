@@ -4,7 +4,10 @@
 <link rel="stylesheet" type="text/css" href="css/style.css">
 <link rel="stylesheet" media="text/css" href="css/mobilePhone.css" />
 
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDduiCZ1KHR48T5zOIGMzrhK7teVckQrOo&sensor=true"></script>
 <script type="text/javascript" src="vendor/js/jquery-1.7.1.min.js"></script>
+
+<script type="text/javascript" src="js/markerclusterer.js"></script>
 <script type="text/javascript" src="js/Happstr.js"></script>
 
 <script type="text/javascript">
@@ -59,7 +62,7 @@ $(document).ready(function() {
 										<div id="input-wrapper"><a href="#" class="do-again-link">Do it again.</div></a>
 									</div>
 								</div>
-								<div class="because-success" style="display:block;">
+								<div class="because-success" style="display:none;">
 									<h2>DIDN'T THAT FEEL<br />GREAT?</h2>
 									<div id="input-wrapper"><a href="#" class="do-again-link">Do it again.</div></a>
 								</div>
@@ -71,8 +74,7 @@ $(document).ready(function() {
 					</div>
 				</li> 
 		        <li class="frames">
-		          <div class="map"></div>
-		          <b> map</b>
+              <div id="map_canvas" style="width:100%; height:100%"></div>
 		        </li>
 				<li class="about frames">
 					<div class="center">
