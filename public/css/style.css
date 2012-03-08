@@ -179,8 +179,8 @@ a.nav-link:link, a.nav-link:active, a.nav-link:visited, a.nav-link:hover {
 
 /*main center div for web*/
 
-.div-class-center {
-    width:976px;
+div.center {
+    /*width:976px;*/
     margin: 0 auto;
 }
 
@@ -188,7 +188,7 @@ a.nav-link:link, a.nav-link:active, a.nav-link:visited, a.nav-link:hover {
 * BEGIN I'M HAPPY STYLES
 */
 #page-wrapper #content-wrapper ul.pages li.im-happy {
-   height:900px;
+   height:430px;
 }
 
 #page-wrapper #content-wrapper ul.pages li.im-happy #retain {
@@ -340,6 +340,36 @@ div.because-success {
     font-family: 'londrina', helvetica, sans-serif;
     line-height:60px;
     margin-bottom:10px;
+}
+
+/**************************************************************************
+* BEGIN ABOUT STYLES
+*/
+
+#page-wrapper #content-wrapper ul.pages li.about {
+   height:370px;
+}
+
+#page-wrapper #content-wrapper ul.pages li.about #frame {
+    width:60%;
+    margin:0 auto;
+    text-align:center;
+}
+
+#page-wrapper #content-wrapper ul.pages li.about h2 {
+     color:#25aae2;
+     font-size:50px;
+     font-family: 'londrina', helvetica, sans-serif;
+     line-height:50px;
+     margin-bottom:20px;
+     margin-top:10px;
+ }
+ 
+#page-wrapper #content-wrapper ul.pages li.about p {
+     font-family: 'lucida grande', lucida sans, arial, sans-serif;
+     font-size:17px;
+     color:#CCC;
+     line-height:20px;
 }
 
 /**************************************************************************
@@ -515,7 +545,7 @@ border-bottom: solid 1px #25aae2;
     }
     
     #page-wrapper #content-wrapper ul.pages li.im-happy span {
-        font-size:70px;
+        font-size:60px;
         font-family: 'londrina', helvetica, sans-serif;
     }
     
@@ -651,6 +681,32 @@ border-bottom: solid 1px #25aae2;
         font-family: 'londrina', helvetica, sans-serif;
         line-height:40px;
         margin-bottom:10px;
+    }
+    
+    #page-wrapper #content-wrapper ul.pages li.about {
+       height:470px;
+    }
+
+    #page-wrapper #content-wrapper ul.pages li.about #frame {
+        width:300px;
+        margin:0 auto;
+        text-align:center;
+    }
+
+    #page-wrapper #content-wrapper ul.pages li.about h2 {
+         color:#25aae2;
+         font-size:50px;
+         font-family: 'londrina', helvetica, sans-serif;
+         line-height:50px;
+         margin-bottom:20px;
+         margin-top:10px;
+     }
+
+    #page-wrapper #content-wrapper ul.pages li.about p {
+         font-family: 'lucida grande', lucida sans, arial, sans-serif;
+         font-size:17px;
+         color:#CCC;
+         line-height:20px;
     }
     
     

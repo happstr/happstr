@@ -25,20 +25,23 @@ var Navigate = (function (obj) {
 
 
 
-
+  
   function sizeContent() {
-        //alert('sizecontent');
       pageWidth = $('body, html').width();
         $('#content-wrapper').css({width:pageWidth});
         $('ul.pages li.frames').css({width:pageWidth});
+        //$('#content-wrapper').css({left: - (pageWidth * _this.idx)});
+        $('ul.pages').css({left: - (pageWidth * _this.idx)});
   }
 
   function setStructure(target) {
-      if(target !==0) {
+      /*if(target !==0) {
           $('#content-wrapper').animate({height: 900});
         } else {
             $('#content-wrapper').animate({height: 413});
-        }
+        }*/
+        setHeight = parseInt($('ul.pages li.frames').eq(target).css('height'));
+        $('#content-wrapper').animate({height: setHeight});
   }
 
   _this.construct = function() {
@@ -78,7 +81,7 @@ var Navigate = (function (obj) {
       $('ul.pages').animate({left: calcAnimation}, 200, function(){
             idx = targetIdx;
             _this.idx = targetIdx;
-            setStructure(_this.idx)
+            setStructure(_this.idx);
       });
 
   }
