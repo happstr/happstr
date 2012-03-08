@@ -36,8 +36,8 @@ class Happstr < Sinatra::Base
     send_file File.join(settings.public_folder, 'html/index.html')
   end
   
-  get '/landing' do
-    send_file File.join(settings.public_folder, 'html/landing.html')
+  get '/beta' do
+    send_file File.join(settings.public_folder, 'html/beta.html')
   end
 
   get '/api/checkins' do

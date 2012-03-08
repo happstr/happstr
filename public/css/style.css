@@ -159,6 +159,7 @@ a.nav-link:link, a.nav-link:active, a.nav-link:visited, a.nav-link:hover {
     width:100%;
     overflow: hidden;
     position:relative;
+    height:430px;
    /* background:#bfedeb;*/
 }
 
@@ -169,18 +170,25 @@ a.nav-link:link, a.nav-link:active, a.nav-link:visited, a.nav-link:hover {
     width:30000px;
 }
 
-#page-wrapper #content-wrapper ul.pages li {
+#page-wrapper #content-wrapper ul.pages li.frames {
     width:100%;
-    height:430px;
+    height:900px;
     overflow: hidden;
     float:left;
+}
+
+/*main center div for web*/
+
+.div-class-center {
+    width:976px;
+    margin: 0 auto;
 }
 
 /**************************************************************************
 * BEGIN I'M HAPPY STYLES
 */
 #page-wrapper #content-wrapper ul.pages li.im-happy {
-    height:411px;
+    height:900px;
 }
 
 #page-wrapper #content-wrapper ul.pages li.im-happy #retain {
@@ -202,6 +210,120 @@ a.nav-link:link, a.nav-link:active, a.nav-link:visited, a.nav-link:hover {
     font-size:120px;
     font-family: 'londrina', helvetica, sans-serif;
 }
+
+/**************************************************************************
+* BEGIN I'M HAPPY STEP TWO
+*/
+#page-wrapper #content-wrapper ul.pages li.im-happy-two {
+    height:900px;
+}
+
+#page-wrapper #content-wrapper ul.pages li.im-happy-two #top-content {
+    height:300px;
+    border-bottom: solid 3px #2bb673;
+    width:100%;
+    position:relative;
+}
+
+#page-wrapper #content-wrapper ul.pages li.im-happy-two #top-content #social-bar {
+    width:100%;
+    position:absolute;
+    bottom:0px;
+    left:0px;
+    background:#ebf6f9;
+    height:50px;
+    text-align:center;
+    font-family: 'lucida grande', lucida sans, arial, sans-serif;
+    color:#000;
+    padding-top:20px;
+    font-size:20px;
+}
+
+#page-wrapper #content-wrapper ul.pages li.im-happy-two #top-content #social-bar .icon {
+    display:inline;
+    margin-bottom:-3px;
+}
+
+
+#page-wrapper #content-wrapper ul.pages li.im-happy-two #retain {
+    width:400px;
+    margin: 0 auto;
+    margin-top:20px;
+    text-align:left;
+    text-align:center;
+}
+
+#page-wrapper #content-wrapper ul.pages li.im-happy-two ul.input-because {
+    width:385px;
+    -moz-border-radius: 10px;
+     border-radius: 10px;
+}
+
+#page-wrapper #content-wrapper ul.pages li.im-happy-two ul.input-because li.input {
+    float:left;
+    height:45px;
+    width:295px;
+    background: url(../img/input_background.jpg) top left no-repeat;
+    padding-left:5px;
+    padding-top:8px;
+}
+
+#page-wrapper #content-wrapper ul.pages li.im-happy-two ul.input-because li.input .happy-input {
+    width:300px;
+    color:#333333;
+    height:35px;
+    width:280px;
+    background-color:#feffe8;
+    font-family: 'lucida grande', lucida sans, arial, sans-serif;
+    font-size:14px;
+    border:none;
+    border:0px;
+    margin-bottom:20px;
+}
+
+#page-wrapper #content-wrapper ul.pages li.im-happy-two ul.input-because li.input #do-again {
+    width:100%;
+    text-align:center;
+}
+
+a.do-again-link:link, a.do-again-link:active, a.do-again-link:visited, a.do-again-link:hover {
+    font-size:18px;
+    color:#25aae2;
+    font-style:italic;
+    
+}
+
+
+#page-wrapper #content-wrapper ul.pages li.im-happy-two ul.input-because li img.go {
+    margin-top:-4px;
+}
+
+#page-wrapper #content-wrapper ul.pages li.im-happy-two h2 {
+    color:#2bb673;
+    font-size:35px;
+    font-family: 'lucida grande', lucida sans, arial, sans-serif;
+    line-height:95px;
+    font-weight:normal;
+}
+
+#page-wrapper #content-wrapper ul.pages li.im-happy-two span {
+    font-size:120px;
+    font-family: 'londrina', helvetica, sans-serif;
+}
+
+/*being happy submit success page*/
+div.because-success {
+    display:none;
+}
+
+#page-wrapper #content-wrapper ul.pages li.im-happy-two div.because-success h2 {
+    color:#fcb040;
+    font-size:60px;
+    font-family: 'londrina', helvetica, sans-serif;
+    line-height:60px;
+    margin-bottom:10px;
+}
+
 /**************************************************************************
 * BEGIN FOOTER STYLES
 */
@@ -253,6 +375,8 @@ a.find-happy-place {
 .link-border {
 border-bottom: solid 1px #25aae2;
 }
+
+
 
 /**************************************************************************
 * BEGIN MAP STYLES
