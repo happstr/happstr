@@ -58,7 +58,7 @@ var Navigate = (function (obj) {
 
       $('.buttons-main .find-happy').click(function(ev) {
         ev.preventDefault();
-        Navigate.navigateTo(10);
+        Navigate.navigateTo(2);
         reset();
         $('.buttons-main .create-happy').removeClass('active');
         $('.buttons-main .find-happy').addClass('active');
