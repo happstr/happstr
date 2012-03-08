@@ -35,7 +35,7 @@ class Happstr < Sinatra::Base
   get '/' do
     send_file File.join(settings.public_folder, 'html/index.html')
   end
-  
+
   get '/beta' do
     send_file File.join(settings.public_folder, 'html/beta.html')
   end
@@ -64,26 +64,41 @@ class Happstr < Sinatra::Base
 
 
   post '/api/checkins' do
+    data = { created_at: Time.now }
+
     lat = params[:lat]
     lon = params[:lon]
-    comment = params[:comment]
-
-    unless lat && (-180..180).cover?(lat.to_i) &&
-           lon && (-180..180).cover?(lon.to_i)
-      "Uhm ... you need to pass ?lat=&long= betwen -180..180 and optional range"
-    else
-      Checkin.create(
-        created_at: Time.now,
-        source:     {lat: lat, lon: lon},
-        comment:    comment
-      )
+    if lat && lon
+      data.merge!({lat: lat, lon: lon})
     end
+
+    comment = params[:comment]
+    if comment
+      data.merge!({comment: comment})
+    end
+
+    Checkin.create(data).to_json
   end
 
   put '/api/checkins/:id' do
-    # validate incoming data
+    # check incoming data
+    data = {}
+
+    lat = params[:lat]
+    lon = params[:lon]
+    if lat && lon
+      data.merge!({source: [lat.to_f, lon.to_f]})
+    end
+
+    comment = params["comment"]
+    if comment
+      data.merge!({comment: comment})
+    end
 
     # update data in store
+    checkin = Checkin.where(_id: params[:id])
+    checkin.update_all(data)
+    checkin.to_json
   end
 
   #

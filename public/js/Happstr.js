@@ -71,38 +71,81 @@ var Navigate = (function (obj) {
 var HappyProcess = (function (obj) {
 	
 	_this = obj;
+  _this.checkinID;
+  _this.position;
 	
 	function postHappy(lat, lon) {
-	    $.post('/api/checkins', { 
-	        lat: lat,
-	        lon: lon
-	    },
-	    function(data) {
-            Navigate.navigateTo(1);
-        });
+    $.post('/api/checkins',
+      function(data) {
+        _this.checkinID = $.parseJSON(data)._id;
+        Navigate.navigateTo(1);
+      }
+    );
 	}
 	
-	function postBecause() {
-	    /*$.post('/api/checkins', { 
-	        lat: lat,
-	        lon: lon
-	    },
-	    function(data) {
-            $('.because-enter').hide();
-            $('.because-enter').show();
-            
-        });*/
-        $('.because-enter').hide();
-        $('.because-success').show();
-	}
+	function postBecause(because) {
+    if(_this.checkinID) {
+      $.ajax({
+        url: '/api/checkins/' + _this.checkinID,
+        type: "PUT",
+        data: {
+          comment: because
+        },
+        success: function(data) {
+          $('.because-enter').hide();
+          $('.because-success').show();
+        }
+      })
+    } else {
+      // look every second if posting the because is done already
+      setTimeout(function() { postBecause(because) }, 1000);
+    }
+  }
+
+  function noPosition() {
+    // well, do something
+  }
+
+  function savePosition() {
+    if(_this.checkinID && _this.position) {
+      $.ajax({
+        url: '/api/checkins/' + _this.checkinID,
+        type: "PUT",
+        data: {
+          lat: _this.position.coords.latitude,
+          lon: _this.position.coords.longitude
+        },
+        success: function(data) {
+           // do something
+        }
+      })
+    } else {
+      // look every second if posting the happiness is done already
+      setTimeout(savePosition, 1000);
+    }
+  }
+
+  function getLocation() {
+    if(navigator.geolocation) {
+      function hasPosition(position) {
+        _this.position = position;
+        savePosition();
+      }
+
+      navigator.geolocation.getCurrentPosition(hasPosition, noPosition);
+    } else {
+      noPosition();
+    }
+  }
 	
 	_this.construct = function() {
 	    $('.send-happy').click(function() {
+          getLocation();
 	        postHappy(1,2);
 	    });
 	    
 	    $('.send-because').click(function() {
-	        postBecause();
+	        postBecause($('.happy-input').val());
 	    });
 	}
 	
