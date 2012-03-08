@@ -1,0 +1,55 @@
+<html>
+<title>Happstr</title>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" media="text/css" href="css/mobilePhone.css" />
+
+<script type="text/javascript" src="vendor/js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="vendor/js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="js/Happstr.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+	Navigate.construct();
+	HappyProcess.construct();
+});
+</script>
+
+  <body>
+    <div id="page-wrapper">
+		<div id="nav-wrapper">
+			<div id="logo-wrapper">
+				
+			</div>
+			<div id="rule"></div>
+			<div id="button-wrapper">
+				<ul class="buttons-main">
+					<li><a href="#" onclick="Navigate.navigateTo(0); return false;" class="nav-link active">Feeling Happy?</a></li>
+					<li><a href="#" onclick="Navigate.navigateTo(1); return false;" class="nav-link">Find Happiness</a></li>
+				</ul>
+			</div>
+		</div>
+		<div id="content-wrapper">
+			<ul class="pages">
+				<li class="im-happy" id="im-happy" >
+					<div id="retain">
+						<h2>FEELING<br /><span>HAPPY?</span></h2>
+						<a href="#" class="send-happy"><img src="img/demo_button.jpg"></a>
+					</div>
+				</li>
+				<li class="map-holder">
+					<div id="map">
+						test
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div id="footer-wrapper">
+			<ul class="footer">
+				<li><a href="#" class="find-happy-place"></a></li>
+				<li><a href="#" class="footer-link link-border">About Happstr</a></li>
+				<li><a href="#" class="footer-link">Global Happiness Feed</a></li>
+			</ul>
+		</div>
+	</div>
+  </body>
+</html>
