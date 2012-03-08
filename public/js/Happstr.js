@@ -6,84 +6,112 @@
 * STORE GLOBAL METHODS AND STATES UNDER THE HAPPSTER NAMESPACE
 */
 var Happstr = (function (obj) {
-	
-	_this = obj;
-	
-	//insert global js here
 
-	return obj;
+  _this = obj;
+
+  //insert global js here
+
+  return obj;
 }(Happstr || {}));
 
 /**************************************************************************
 * BEGIN MAIN NAVIGATION CLASS
 */
 var Navigate = (function (obj) {
-	
-	_this = obj; //store local scope
-	
-	_this.idx = 0; //store frame index
-	
 
-	
-	
-	function sizeContent() {
+  _this = obj; //store local scope
+
+  _this.idx = 0; //store frame index
+
+
+
+
+  function sizeContent() {
         //alert('sizecontent');
-	    pageWidth = $('body, html').width();
+      pageWidth = $('body, html').width();
         $('#content-wrapper').css({width:pageWidth});
         $('ul.pages li.frames').css({width:pageWidth});
-	}
-	
-	function setStructure(target) {
-	    if(target !==0) {
-	        $('#content-wrapper').animate({height: 900});
+  }
+
+  function setStructure(target) {
+      if(target !==0) {
+          $('#content-wrapper').animate({height: 900});
         } else {
             $('#content-wrapper').animate({height: 413});
         }
-	}
-	
-	_this.construct = function() {
-	    sizeContent();
-	    $(window).resize(function() {
-	        sizeContent();
-	    });
-	}
-	
-	_this.navigateTo = function(targetIdx) {
-	    animWidth = $('body, html').width();
-	    calcAnimation = - (animWidth * targetIdx);
-	 
-	    $('ul.pages').animate({left: calcAnimation}, 200, function(){
-	          idx = targetIdx;
-    	      _this.idx = targetIdx;
-    	      setStructure(_this.idx)
-	    });
-	      
-	}
-	
-	//insert global js here
+  }
 
-	return obj;
+  _this.construct = function() {
+      sizeContent();
+      $(window).resize(function() {
+          sizeContent();
+      });
+
+      // setup navigation etc
+      $('.buttons-main .create-happy').click(function(ev) {
+        ev.preventDefault();
+        Navigate.navigateTo(0);
+        reset();
+        $('.buttons-main .find-happy').removeClass('active');
+        $('.buttons-main .create-happy').addClass('active');
+      });
+
+      $('.buttons-main .find-happy').click(function(ev) {
+        ev.preventDefault();
+        Navigate.navigateTo(2);
+        reset();
+        $('.buttons-main .create-happy').removeClass('active');
+        $('.buttons-main .find-happy').addClass('active');
+      });
+
+      $('.do-again').click(function(ev) {
+        ev.preventDefault();
+        Navigate.navigateTo(0);
+        reset();
+      });
+  }
+
+  _this.navigateTo = function(targetIdx) {
+      animWidth = $('body, html').width();
+      calcAnimation = - (animWidth * targetIdx);
+
+      $('ul.pages').animate({left: calcAnimation}, 200, function(){
+            idx = targetIdx;
+            _this.idx = targetIdx;
+            setStructure(_this.idx)
+      });
+
+  }
+
+  //insert global js here
+
+  return obj;
 }(Navigate || {}));
 
 /**************************************************************************
 * BEGIN HAPPY PROCESS CLASS
 */
 var HappyProcess = (function (obj) {
-	
-	_this = obj;
+
+  _this = obj;
   _this.checkinID;
   _this.position;
-	
-	function postHappy(lat, lon) {
+
+  _this.reset = function() {
+    _this.checkinID = null;
+    _this.position = null;
+  }
+
+  function postHappy(lat, lon) {
     $.post('/api/checkins',
       function(data) {
         _this.checkinID = $.parseJSON(data)._id;
         Navigate.navigateTo(1);
       }
     );
-	}
-	
-	function postBecause(because) {
+  }
+
+  function postBecause(because) {
     if(_this.checkinID) {
       $.ajax({
         url: '/api/checkins/' + _this.checkinID,
@@ -137,21 +165,25 @@ var HappyProcess = (function (obj) {
       noPosition();
     }
   }
-	
-	_this.construct = function() {
-	    $('.send-happy').click(function() {
+
+  _this.construct = function() {
+      $('.send-happy').click(function() {
           getLocation();
-	        postHappy(1,2);
-	    });
-	    
-	    $('.send-because').click(function() {
-	        postBecause($('.happy-input').val());
-	    });
-	}
-	
-	
+          postHappy(1,2);
+      });
 
+      $('.send-because').click(function() {
+          postBecause($('.happy-input').val());
+      });
+  }
 
-	return obj;
+ return obj;
 }(HappyProcess || {}));
+
+var reset = function() {
+  HappyProcess.reset();
+
+  $('.because-enter').show().val("");
+  $('.because-success').hide();
+}
 
