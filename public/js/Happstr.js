@@ -71,15 +71,16 @@ var Navigate = (function (obj) {
 var HappyProcess = (function (obj) {
 	
 	_this = obj;
+  _this.checkinID;
+  _this.position;
 	
 	function postHappy(lat, lon) {
-	    $.post('/api/checkins', { 
-	        lat: lat,
-	        lon: lon
-	    },
-	    function(data) {
-            Navigate.navigateTo(1);
-        });
+    $.post('/api/checkins',
+      function(data) {
+        _this.checkinID = $.parseJSON(data)._id;
+        Navigate.navigateTo(1);
+      }
+    );
 	}
 	
 	function postBecause() {
@@ -95,9 +96,46 @@ var HappyProcess = (function (obj) {
         $('.because-enter').hide();
         $('.because-success').show();
 	}
+
+  function noPosition() {
+    // well, do something
+  }
+
+  function savePosition() {
+    if(_this.checkinID && _this.position) {
+      $.ajax({
+        url: '/api/checkins/' + _this.checkinID,
+        type: "PUT",
+        data: {
+          lat: _this.position.coords.latitude,
+          lon: _this.position.coords.longitude
+        },
+        success: function(data) {
+           // do something
+        }
+      })
+    } else {
+      // look every second if posting the happiness is done already
+      setTimeout(savePosition, 1000);
+    }
+  }
+
+  function getLocation() {
+    if(navigator.geolocation) {
+      function hasPosition(position) {
+        _this.position = position;
+        savePosition();
+      }
+
+      navigator.geolocation.getCurrentPosition(hasPosition, noPosition);
+    } else {
+      noPosition();
+    }
+  }
 	
 	_this.construct = function() {
 	    $('.send-happy').click(function() {
+          getLocation();
 	        postHappy(1,2);
 	    });
 	    
