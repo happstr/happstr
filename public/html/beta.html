@@ -1,5 +1,6 @@
 <html>
 <title>Happstr</title>
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
 <link rel="stylesheet" type="text/css" href="css/style.css">
 <link rel="stylesheet" media="text/css" href="css/mobilePhone.css" />
 
@@ -28,7 +29,7 @@ $(document).ready(function() {
 						<li><a href="#" onclick="Navigate.navigateTo(1); return false;" class="nav-link">Find Happiness</a></li>
 					</ul>
 				</div>
-			</div>
+			</div> 
 		</div>
 		<div id="content-wrapper">
 			<ul class="pages">
@@ -36,7 +37,7 @@ $(document).ready(function() {
 					<div class="center">
 						<div id="retain">
 							<h2>FEELING<br /><span>HAPPY?</span></h2>
-							<a href="#" class="send-happy"><img src="img/demo_button.jpg"></a>
+							<a href="#" class="send-happy"></a>
 						</div>
 					</div>
 				</li>
@@ -49,13 +50,15 @@ $(document).ready(function() {
 									<ul class="input-because">
 										<li class="input">
 											<input type="text" class="happy-input"/>
-											<div id="do-again">
-												<div id="input-wrapper"><a href="#" class="do-again-link">Do it again.</div></a>
-											</div>
+											
 									
 										</li>
-										<li><a href="#" class="send-because"><img src="img/go_button.jpg" class="go"></a></li>
-									</ul>
+										<li class="go-button"><a href="#" class="send-because"><img src="img/go_button.jpg" class="go"></a></li>
+									</ul> 
+									<div class="clear"></div>
+									<div id="do-again">
+										<div id="input-wrapper"><a href="#" class="do-again-link">Do it again.</div></a>
+									</div>
 								</div>
 								<div class="because-success">
 									<h2>DIDN'T THAT FEEL<br />GREAT?</h2>
@@ -68,7 +71,7 @@ $(document).ready(function() {
 							Share the <img src="img/heart-icon.png" class="icon"/> &amp; <img src="img/facebook.png" class="icon"/> and <img src="img/twitter.png" class="icon"/>
 						</div>
 					</div>
-				</li>
+				</li> 
 			</ul>
 		</div>
 		<div id="footer-wrapper">

@@ -188,7 +188,7 @@ a.nav-link:link, a.nav-link:active, a.nav-link:visited, a.nav-link:hover {
 * BEGIN I'M HAPPY STYLES
 */
 #page-wrapper #content-wrapper ul.pages li.im-happy {
-    height:900px;
+   height:900px;
 }
 
 #page-wrapper #content-wrapper ul.pages li.im-happy #retain {
@@ -205,6 +205,16 @@ a.nav-link:link, a.nav-link:active, a.nav-link:visited, a.nav-link:hover {
     line-height:95px;
     margin-bottom:10px;
 }
+
+a.send-happy {
+    height:177px;
+    width:178px;
+    background: url(../img/demo_button.jpg) top left no-repeat;
+    display:block;
+    margin: 0 auto;
+}
+
+
 
 #page-wrapper #content-wrapper ul.pages li.im-happy span {
     font-size:120px;
@@ -280,17 +290,25 @@ a.nav-link:link, a.nav-link:active, a.nav-link:visited, a.nav-link:hover {
     border:0px;
     margin-bottom:20px;
 }
-
+f
 #page-wrapper #content-wrapper ul.pages li.im-happy-two ul.input-because li.input #do-again {
     width:100%;
     text-align:center;
+    
 }
 
 a.do-again-link:link, a.do-again-link:active, a.do-again-link:visited, a.do-again-link:hover {
-    font-size:18px;
+    font-size:22px;
     color:#25aae2;
     font-style:italic;
+    display:block;
+    margin-top:20px;
     
+}
+
+#page-wrapper #content-wrapper ul.pages li.im-happy-two ul.input-because li.go-button {
+    float:left;
+    height:35px;
 }
 
 
@@ -396,10 +414,254 @@ border-bottom: solid 1px #25aae2;
 * BEGIN MEDIA QUERIES
 */
 
-@media all and (max-width: 520px) {
-  /*body {
-    background: #ccc;
-  }*/
+@media screen and (max-device-width: 500px) {
+    /*body{display:none;}*/
+    #page-wrapper #nav-wrapper {
+        width:100%;
+        height:130px;
+        padding-top:5px;
+        border-bottom:3px solid #ffde15;
+    }
+    
+    #page-wrapper #nav-wrapper #logo-wrapper {
+        height:90px;
+        width:100%;
+        background: url(../img/logo.jpg) top center no-repeat;
+    }
+
+    #page-wrapper #nav-wrapper #rule {
+        width:400px;
+        background: #d7eef4;
+        margin:0 auto;
+        display:block;
+        height:1px;
+        margin-top:10px;
+    }
+
+    #page-wrapper #nav-wrapper #button-wrapper {
+        height:30px;
+        width:100%;
+        padding-top:5px;
+        /*background-color:#000;*/
+    }
+
+    #page-wrapper #nav-wrapper #button-wrapper ul.buttons-main {
+        width:300px;
+        height:25px;
+       /* background-color:#d402c8;*/
+        margin:0 auto;
+        padding-top:0px;
+    }
+
+    #page-wrapper #nav-wrapper #button-wrapper ul.buttons-main li {
+        width:150px;
+        float:left;
+        text-align:center;
+    }
+
+    a.nav-link:link, a.nav-link:active, a.nav-link:visited, a.nav-link:hover {
+        margin:0px;
+        font-size:16px;
+        color:#df55a0;
+        text-decoration:none;
+        padding-left:8px;
+        padding-right:8px;
+        padding-top:3px;
+        padding-bottom:2px;
+        -moz-border-radius: 10px;
+        border-radius: 10px;
+        font-family: 'lucida grande', lucida sans, arial, sans-serif;
+
+    }
+    
+    #page-wrapper #content-wrapper {
+        width:100%;
+        overflow: hidden;
+        position:relative;
+        height:270px;
+       /* background:#bfedeb;*/
+    }
+    
+    #page-wrapper #content-wrapper ul.pages {
+        height:270px;
+        left:0px;
+        position:relative;
+        width:30000px;
+    }
+
+    #page-wrapper #content-wrapper ul.pages li.frames {
+        width:100%;
+        height:900px;
+        overflow: hidden;
+        float:left;
+    }
+    
+    #page-wrapper #content-wrapper ul.pages li.im-happy {
+        height:270px;
+    }
+
+    #page-wrapper #content-wrapper ul.pages li.im-happy #retain {
+        margin: 0 auto;
+        margin-top:20px;
+        text-align: center;
+    }
+
+    #page-wrapper #content-wrapper ul.pages li.im-happy h2 {
+        color:#25aae2;
+        font-size:50px;
+        font-family: 'londrina', helvetica, sans-serif;
+        line-height:50px;
+        margin-bottom:10px;
+    }
+    
+    #page-wrapper #content-wrapper ul.pages li.im-happy span {
+        font-size:70px;
+        font-family: 'londrina', helvetica, sans-serif;
+    }
+    
+    a.send-happy {
+        height:119px;
+        width:119px;
+        background: url(../img/mobiel_button.png) top left no-repeat;
+        display:block;
+        margin: 0 auto;
+    }
+    
+    #page-wrapper #content-wrapper ul.pages li.im-happy-two {
+        height:900px;
+    }
+
+    #page-wrapper #content-wrapper ul.pages li.im-happy-two #top-content {
+        height:190px;
+        border-bottom: solid 3px #2bb673;
+        width:100%;
+        position:relative;
+    }
+
+    #page-wrapper #content-wrapper ul.pages li.im-happy-two #top-content #social-bar {
+        width:100%;
+        position:absolute;
+        bottom:0px;
+        left:0px;
+        background:#ebf6f9;
+        height:47px;
+        text-align:center;
+        font-family: 'lucida grande', lucida sans, arial, sans-serif;
+        color:#000;
+        padding-top:20px;
+        font-size:20px;
+    }
+
+    #page-wrapper #content-wrapper ul.pages li.im-happy-two #top-content #social-bar .icon {
+        display:inline;
+        margin-bottom:-3px;
+    }
+
+
+    #page-wrapper #content-wrapper ul.pages li.im-happy-two #retain {
+        width:300px;
+        margin: 0 auto;
+        margin-top:10px;
+        text-align:left;  
+        /*background:#000;*/
+    }
+
+    #page-wrapper #content-wrapper ul.pages li.im-happy-two ul.input-because {
+        width:300px;
+       /* background:#000;*/
+        height:50px;
+        margin-top:8px;
+    }
+
+    #page-wrapper #content-wrapper ul.pages li.im-happy-two ul.input-because li.input {
+        float:left;
+        height:45px;
+        width:245px;
+        background: url(../img/mobile_input_background.jpg) top left no-repeat;
+        /*background:#ccc;*/
+        padding-left:5px;
+        padding-top:8px;
+    }
+
+    #page-wrapper #content-wrapper ul.pages li.im-happy-two ul.input-because li.input .happy-input {
+        color:#333333;
+        height:35px;
+        width:225px;
+        background-color:#feffe8;
+        font-family: 'lucida grande', lucida sans, arial, sans-serif;
+        font-size:14px;
+        border:none;
+        border:0px;
+        margin-bottom:20px;
+    }
+
+    #page-wrapper #content-wrapper ul.pages li.im-happy-two ul.input-because li.input #do-again {
+        width:100%;
+        text-align:center;
+    }
+
+    a.do-again-link:link, a.do-again-link:active, a.do-again-link:visited, a.do-again-link:hover {
+        font-size:18px;
+        color:#25aae2;
+        font-style:italic;
+        text-align:center;
+        margin-top:5px;
+    }
+    
+    #page-wrapper #content-wrapper ul.pages li.im-happy-two ul.input-because li.go-button {
+        float:left;
+        height:35px;
+        width:40px;
+       /* background:#ddd;*/
+        margin-left:5px;
+        
+    }
+    
+
+
+    #page-wrapper #content-wrapper ul.pages li.im-happy-two ul.input-because li img.go {
+        /*margin-top:-4px;*/
+    }
+
+    #page-wrapper #content-wrapper ul.pages li.im-happy-two h2 {
+        color:#2bb673;
+        font-size:23px;
+        font-family: 'lucida grande', lucida sans, arial, sans-serif;
+        line-height:25px;
+        font-weight:normal;
+        margin-top:10px;
+        margin-bottom:10px;
+        padding:0;
+    }
+
+    #page-wrapper #content-wrapper ul.pages li.im-happy-two span {
+        font-size:120px;
+        font-family: 'londrina', helvetica, sans-serif;
+    }
+
+    /*being happy submit success page*/
+    div.because-success {
+        display:none;
+    }
+
+    #page-wrapper #content-wrapper ul.pages li.im-happy-two div.because-success h2 {
+        color:#fcb040;
+        font-size:60px;
+        font-family: 'londrina', helvetica, sans-serif;
+        line-height:60px;
+        margin-bottom:10px;
+    }
+    
+    
+    
+    #footer-wrapper ul.footer {
+        width:250px;
+        margin: 0 auto;
+        margin-top:10px;
+        margin-bottom:20px;
+        height:100px;
+    }
+    
 }
 
 
