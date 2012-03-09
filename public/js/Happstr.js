@@ -184,10 +184,8 @@ var HappyProcess = (function (obj) {
          facebookString = happyString;
      }
      
-     alert(facebookString);
-     
       
-     publishStream(facebookString);
+     streamPublish(facebookString);
      
   }
 
@@ -211,6 +209,7 @@ var HappyProcess = (function (obj) {
         success: function(data) {
             $('body, html').animate({scrollTop:0}, 'fast');
             $.mobile.silentScroll(100);
+            postSocial();
           // do something?
         }
       })
