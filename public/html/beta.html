@@ -1,8 +1,7 @@
 <html>
 <title>Happstr</title>
-<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
+<meta name="viewport" content="width=device-width; initial-scale=1; maximum-scale=1.0; user-scalable=0;" />
 <link rel="stylesheet" type="text/css" href="css/style.css">
-<link rel="stylesheet" media="text/css" href="css/mobilePhone.css" />
 
 <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDduiCZ1KHR48T5zOIGMzrhK7teVckQrOo&sensor=true"></script>
 <script type="text/javascript" src="vendor/js/jquery-1.7.1.min.js"></script>
@@ -14,24 +13,62 @@
 $(document).ready(function() {
 	Navigate.construct();
 	HappyProcess.construct();
+	
+	$(window).orientationchange(function(event){
+		
+		Navigate.globalSizeContent();
+		
+	});
 });
 </script>
+<script type="text/javascript" src="vendor/js/jquery.mobile-1.0.1.min.js"></script>
 
   <body>
+	<div id="fb-root"></div>
+	<script type="text/javascript" src="http://connect.facebook.net/en_US/all.js"></script>
+	<script type="text/javascript">
+	  FB.init({
+	   appId  : '392198554141811',
+	   status : true,
+	   cookie : true,
+	   xfbml  : true 
+	  });
+	</script>
+	<script type="text/javascript">
+	  function streamPublish(name, description, hrefTitle, hrefLink, userPrompt, imageSrc, imageUrl){
+	   FB.ui(
+	    {
+	     method: 'stream.publish',
+	     message: 'Publish Hppstr',
+	     attachment: {
+	     media: [{type: 'image',src: imageSrc,href: imageUrl}], 
+	     name: name,
+	     caption: '',
+	     description: (description),
+	    href: hrefLink
+	},
+	action_links: [{ text: hrefTitle, href: hrefLink }],
+	user_prompt_message: userPrompt
+	},
+	  function(response) {
+		
+	 // do something when you have posted
+	   });
+	  }
+	  function publishStream(happyMessage){
+	   streamPublish("Stream Publish", happyMessage , 'do something cool', 'http://example.com', "My fb app", 'http://bit.ly/AJTnf', 'http://bit.ly/hifZk');
+	  }
+	 </script>
     <div id="page-wrapper">
-		<div id="nav-wrapper">
-			<div class="center">
-				<div id="logo-wrapper">
-				
-				</div>
-				<div id="rule"></div>
-				<div id="button-wrapper">
-					<ul class="buttons-main">
-						<li><a href="#" class="nav-link active create-happy">Feeling Happy?</a></li>
-						<li><a href="#" class="nav-link find-happy">Find Happiness</a></li>
-					</ul>
-				</div>
-			</div> 
+		<div id="nav-wrapper"  data-role="header" data-position="fixed">
+			<a href="#" class="logo" onclick="Navigate.navigateTo(0); return false;"></a>
+			<div id="rule"></div>
+			<div id="button-wrapper">
+				<ul class="buttons-main">
+					<li><a href="#" class="nav-link active create-happy">Feeling Happy?</a></li>
+					<li><a href="#" class="nav-link find-happy">Find Happiness</a></li>
+				</ul>
+			</div>
 		</div>
 		<div id="content-wrapper">
 			<ul class="pages">
@@ -69,15 +106,28 @@ $(document).ready(function() {
 							</div>
 						</div>
 						<div id="social-bar">
-							Share the <img src="img/heart-icon.png" class="icon"/> &amp; <img src="img/facebook.png" class="icon"/> and <img src="img/twitter.png" class="icon"/>
+							Share the <img src="img/heart-icon.png" class="icon"/> on <img src="img/facebook.png" class="icon"/> &amp; <img src="img/twitter.png" class="icon"/>
 						</div>
 					</div>
 				</li> 
-		        <li class="frames">
-              <div id="map_canvas" style="width:100%; height:100%"></div>
+		        <li class="frames map">
+					<div id="retain">
+              			<div id="map_canvas" style="width:100%; height:100%"></div>
+					</div>
 		        </li>
-				<li class="frames">
-					
+				<li class="about frames">
+					<div class="center">
+						<div id="frame">
+							<h2>Find your happy place!</h2>
+<p>Our mission is simple: increase global happiness. In the U.S. alone 16 million people suffer from depression and less than 30 percent are seeking adequate help. At the same time there's mounting evidence that suggests your happiness can be easily elevated by the network effect of those around you. With Happstr you can find your happy place.</p>
+
+<p>We make a simple web app for you to keep track of your happiness.</p>
+							
+<p>Happster, is a “psychographic location check-in service,” a way to log the emotions you feel when you check in at different places.</p>
+
+<p>With Happstr you can see when people are delighted, mapped within your area or around the world. Feeling pretty good? Let others know. When you tap on the happy button your elation gets tagged anonymously to a global map. Feeling down? Discover the happiness aroung you and around the world.</p>
+						</div>
+					</div>
 				<li>
 			</ul>
 		</div>
@@ -85,8 +135,8 @@ $(document).ready(function() {
 			<div class="center">
 				<ul class="footer">
 					<li><a href="#" class="find-happy-place"></a></li>
-					<li><a href="#" class="footer-link link-border">About Happstr</a></li>
-					<li><a href="#" class="footer-link">Global Happiness Feed</a></li>
+					<li><a href="#" class="footer-link link-border" onclick="Navigate.navigateTo(3); return false;">About Happstr</a></li>
+					<!--<li><a href="#" class="footer-link">Global Happiness Feed</a></li>-->
 				</ul>
 			</div>
 		</div>
