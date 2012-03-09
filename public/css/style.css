@@ -105,7 +105,14 @@ body {
 #page-wrapper #nav-wrapper #logo-wrapper {
     height:86px;
     width:100%;
+}
+
+a.logo {
     background: url(../img/logo.jpg) top center no-repeat;
+    width:92px;
+    height:86px;
+    display:block;
+    margin: 0 auto;
 }
 
 #page-wrapper #nav-wrapper #rule {
@@ -220,6 +227,7 @@ a.send-happy {
     font-size:120px;
     font-family: 'londrina', helvetica, sans-serif;
 }
+
 
 /**************************************************************************
 * BEGIN I'M HAPPY STEP TWO
@@ -371,6 +379,18 @@ div.because-success {
      color:#CCC;
      line-height:20px;
 }
+
+/**************************************************************************
+* BEGIN I'M MAP STYLES
+*/
+#page-wrapper #content-wrapper ul.pages li.map {
+    
+}
+
+#page-wrapper #content-wrapper ul.pages li.map #retain {
+    width:100%;
+}
+
 
 /**************************************************************************
 * BEGIN FOOTER STYLES
@@ -709,7 +729,9 @@ border-bottom: solid 1px #25aae2;
          line-height:20px;
     }
     
-    
+    #page-wrapper #content-wrapper ul.pages li.map #retain {
+        width:80%;
+    }
     
     #footer-wrapper ul.footer {
         width:250px;

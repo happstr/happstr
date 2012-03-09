@@ -18,12 +18,45 @@ $(document).ready(function() {
 </script>
 
   <body>
+	<div id="fb-root"></div>
+	<script type="text/javascript" src="http://connect.facebook.net/en_US/all.js"></script>
+	<script type="text/javascript">
+	  FB.init({
+	   appId  : '392198554141811',
+	   status : true,
+	   cookie : true,
+	   xfbml  : true 
+	  });
+	</script>
+	<script type="text/javascript">
+	  function streamPublish(name, description, hrefTitle, hrefLink, userPrompt, imageSrc, imageUrl){
+	   FB.ui(
+	    {
+	     method: 'stream.publish',
+	     message: 'Publish Hppstr',
+	     attachment: {
+	     media: [{type: 'image',src: imageSrc,href: imageUrl}], 
+	     name: name,
+	     caption: '',
+	     description: (description),
+	    href: hrefLink
+	},
+	action_links: [{ text: hrefTitle, href: hrefLink }],
+	user_prompt_message: userPrompt
+	},
+	  function(response) {
+		
+	 // do something when you have posted
+	   });
+	  }
+	  function publishStream(happyMessage){
+	   streamPublish("Stream Publish", happyMessage , 'do something cool', 'http://example.com', "My fb app", 'http://bit.ly/AJTnf', 'http://bit.ly/hifZk');
+	  }
+	 </script>
     <div id="page-wrapper">
 		<div id="nav-wrapper">
 			<div class="center">
-				<div id="logo-wrapper">
-				
-				</div>
+				<a href="#" class="logo" onclick="Navigate.navigateTo(0); return false;"></a>
 				<div id="rule"></div>
 				<div id="button-wrapper">
 					<ul class="buttons-main">
@@ -69,12 +102,14 @@ $(document).ready(function() {
 							</div>
 						</div>
 						<div id="social-bar">
-							Share the <img src="img/heart-icon.png" class="icon"/> &amp; <img src="img/facebook.png" class="icon"/> and <img src="img/twitter.png" class="icon"/>
+							Share the <img src="img/heart-icon.png" class="icon"/> on <img src="img/facebook.png" class="icon"/> &amp; <img src="img/twitter.png" class="icon"/>
 						</div>
 					</div>
 				</li> 
-		        <li class="frames">
-              <div id="map_canvas" style="width:100%; height:100%"></div>
+		        <li class="frames map">
+					<div id="retain">
+              			<div id="map_canvas" style="width:100%; height:100%"></div>
+					</div>
 		        </li>
 				<li class="about frames">
 					<div class="center">

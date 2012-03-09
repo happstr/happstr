@@ -27,6 +27,7 @@ var Navigate = (function (obj) {
 
   
   function sizeContent() {
+      
       pageWidth = $('body, html').width();
         $('#content-wrapper').css({width:pageWidth});
         $('ul.pages li.frames').css({width:pageWidth});
@@ -76,14 +77,23 @@ var Navigate = (function (obj) {
   }
 
   _this.navigateTo = function(targetIdx) {
-      animWidth = $('body, html').width();
-      calcAnimation = - (animWidth * targetIdx);
-
-      $('ul.pages').animate({left: calcAnimation}, 200, function(){
-            idx = targetIdx;
-            _this.idx = targetIdx;
-            setStructure(_this.idx);
-      });
+      if(targetIdx !== _this.idx)  {
+          animWidth = $('body, html').width();
+          calcAnimation = - (animWidth * targetIdx);
+      
+          $('body, html').animate({scrollTop:0}, 'fast');
+          $('ul.pages').animate({left: calcAnimation}, 200, function(){
+                idx = targetIdx;
+                _this.idx = targetIdx;
+                setStructure(_this.idx);
+          });
+    }
+    
+    else {
+        alert('return');
+        return;
+        
+    }
 
   }
 
@@ -138,6 +148,24 @@ var HappyProcess = (function (obj) {
     _this.checkinID = null;
     _this.position = null;
   }
+  
+  function postSocial() {
+     var facebookString;
+     var happyString ='Rob is happy ';
+     var becauseString = $('.happy-input').val();
+     
+     if(becauseString !== '') {
+         facebookString = happyString + 'because ' + becauseString;
+     } else {
+         facebookString = happyString;
+     }
+     
+     alert(facebookString);
+     
+      
+     publishStream(facebookString);
+     
+  }
 
   function postHappy(lat, lon) {
     $.post('/api/checkins',
@@ -147,7 +175,8 @@ var HappyProcess = (function (obj) {
       }
     );
   }
-
+  
+  
   function postBecause(because) {
     if(_this.checkinID) {
       $.ajax({
@@ -159,11 +188,13 @@ var HappyProcess = (function (obj) {
         success: function(data) {
           $('.because-enter').hide();
           $('.because-success').show();
+
         }
       })
     } else {
       // look every second if posting the because is done already
       setTimeout(function() { postBecause(because) }, 1000);
+
     }
   }
 
@@ -210,7 +241,9 @@ var HappyProcess = (function (obj) {
       });
 
       $('.send-because').click(function() {
-          postBecause($('.happy-input').val());
+          //postBecause($('.happy-input').val());
+            postSocial();
+            postBecause();
       });
   }
 
