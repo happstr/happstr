@@ -109,7 +109,7 @@ var Navigate = (function (obj) {
 
     var myOptions = {
       center: new google.maps.LatLng(lat, lon),
-      zoom: 14,
+      zoom: 12,
       mapTypeId: google.maps.MapTypeId.ROADMAP
     };
 
