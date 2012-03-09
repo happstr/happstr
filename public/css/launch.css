@@ -150,7 +150,14 @@ footer {
 }
 
 .moar {
-  padding-bottom: 2em;
+  padding-bottom: 1em;
   color: #666;
+}
+
+.team {
+  font-family: Helvetica, arial, sans-serif;
+  font-size: 13px;
+  color: #999;
+  margin-bottom: 2em;
 }
 
