@@ -140,7 +140,6 @@ var HappyProcess = (function (obj) {
     $.post('/api/checkins',
       function(data) {
         _this.checkinID = $.parseJSON(data)._id;
-        Navigate.navigateTo(1);
       }
     );
   }
@@ -154,8 +153,7 @@ var HappyProcess = (function (obj) {
           comment: because
         },
         success: function(data) {
-          $('.because-enter').hide();
-          $('.because-success').show();
+          // do something?
         }
       })
     } else {
@@ -202,12 +200,19 @@ var HappyProcess = (function (obj) {
 
   _this.construct = function() {
       $('.send-happy').click(function() {
+          // disable button to avoid double clicks
+          //$('.send-happy').click(function() {} );
+          // show spinner
+
           getLocation();
           postHappy(1,2);
+          Navigate.navigateTo(1);
       });
 
       $('.send-because').click(function() {
           postBecause($('.happy-input').val());
+          $('.because-enter').hide();
+          $('.because-success').show();
       });
   }
 
