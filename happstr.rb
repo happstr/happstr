@@ -36,8 +36,12 @@ class Happstr < Sinatra::Base
     send_file File.join(settings.public_folder, 'html/index.html')
   end
 
-  get '/beta' do
+  get '/prototype' do
     send_file File.join(settings.public_folder, 'html/beta.html')
+  end
+
+  get '/beta' do
+    redirect '/prototype'
   end
 
   get '/map' do
@@ -111,6 +115,8 @@ class Happstr < Sinatra::Base
   end
 
   get '/dev/bootstrap' do
+    return true # remove to actually run this
+
     downtown_austin = [30.264924, -97.741413]
 
     (1..10).each do |lat|

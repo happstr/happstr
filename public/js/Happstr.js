@@ -124,7 +124,7 @@ var Navigate = (function (obj) {
               function(msg) {
                 $.each(msg, function(key, val) {
                   // console.log(val.source[0], val.source[1]);
-                  var latLng = new google.maps.LatLng(val.source[1], val.source[0]);
+                  var latLng = new google.maps.LatLng(val.source[0], val.source[1]);
                   var marker = new google.maps.Marker({position:latLng});
                   _this.markers.push(marker);
               })
@@ -176,7 +176,6 @@ var HappyProcess = (function (obj) {
     $.post('/api/checkins',
       function(data) {
         _this.checkinID = $.parseJSON(data)._id;
-        Navigate.navigateTo(1);
       }
     );
   }
@@ -191,9 +190,8 @@ var HappyProcess = (function (obj) {
           comment: because
         },
         success: function(data) {
-          $('.because-enter').hide();
-          $('.because-success').show();
 
+          // do something?
         }
       })
     } else {
@@ -241,14 +239,21 @@ var HappyProcess = (function (obj) {
 
   _this.construct = function() {
       $('.send-happy').click(function() {
+          // disable button to avoid double clicks
+          //$('.send-happy').click(function() {} );
+          // show spinner
+
           getLocation();
           postHappy(1,2);
+          Navigate.navigateTo(1);
       });
 
       $('.send-because').click(function() {
-            //postSocial();
-            postBecause($('.happy-input').val());
+
             
+          postBecause($('.happy-input').val());
+          $('.because-enter').hide();
+          $('.because-success').show();
 
       });
   }
