@@ -36,7 +36,7 @@ var Navigate = (function (obj) {
   }
   
   _this.globalSizeContent = function() {
-      alert('size');
+      //alert('size');
       sizeContent();
   }
 
@@ -190,7 +190,7 @@ var HappyProcess = (function (obj) {
           comment: because
         },
         success: function(data) {
-
+            $('body, html').animate({scrollTop:0}, 'fast');
           // do something?
         }
       })

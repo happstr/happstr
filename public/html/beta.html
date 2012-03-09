@@ -17,6 +17,7 @@ $(document).ready(function() {
 	$(window).orientationchange(function(event){
 		
 		Navigate.globalSizeContent();
+		$('body, html').animate({scrollTop:0}, 'fast');
 		
 	});
 });
@@ -106,7 +107,7 @@ $(document).ready(function() {
 							</div>
 						</div>
 						<div id="social-bar">
-							Share the <img src="img/heart-icon.png" class="icon"/> on <img src="img/facebook.png" class="icon"/> &amp; <img src="img/twitter.png" class="icon"/>
+							Share the <img src="img/heart-icon.png" class="icon"/> on <img src="img/facebook.png" class="icon"/> &amp; <a href="http://twitter.com/#!/happstr" target="_blank"><img src="img/twitter.png" class="icon"/></a>
 						</div>
 					</div>
 				</li> 

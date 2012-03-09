@@ -224,11 +224,11 @@ a.send-happy {
     background: url(../img/happstr_button_sprite_178.jpg) no-repeat;
     display:block;
     margin: 0 auto;
-    background-position: 0 0;
+    background-position: 0 -178px;
 }
 
 a.send-happy:hover {
-    background-position: 0 -178px;
+    background-position: 0 0;
 }
 
 
@@ -594,7 +594,7 @@ border-bottom: solid 1px #25aae2;
     }
     
     #page-wrapper #content-wrapper ul.pages li.im-happy-two {
-        height:900px;
+        height:400px;
     }
 
     #page-wrapper #content-wrapper ul.pages li.im-happy-two #top-content {
