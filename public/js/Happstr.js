@@ -83,6 +83,11 @@ var Navigate = (function (obj) {
   }
 
   _this.navigateTo = function(targetIdx) {
+      if(targetIdx === 2) {
+         $('#nav-wrapper').css({position: 'fixed'});
+      } else {
+         $('#nav-wrapper').css({position: 'absolute'}); 
+      }
       if(targetIdx !== _this.idx)  {
           animWidth = $('body, html').width();
           calcAnimation = - (animWidth * targetIdx);
@@ -205,6 +210,7 @@ var HappyProcess = (function (obj) {
         },
         success: function(data) {
             $('body, html').animate({scrollTop:0}, 'fast');
+            $.mobile.silentScroll(100);
           // do something?
         }
       })
