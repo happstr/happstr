@@ -242,7 +242,7 @@ a.send-happy {
 }
 
 a.send-happy:hover {
-    background-position: 0 0;
+    background-position: 0 1;
 }
 
 
@@ -608,23 +608,15 @@ border-bottom: solid 1px #25aae2;
         height:119px;
         width:119px;
         background: url(../img/happstr_button_sprite_119.jpg) no-repeat;
-        background-position: 0 -119px;
+        background-position: 0 -118px;
         display:block;
         margin: 0 auto;
     }
-<<<<<<< HEAD
-
-    a.send-happy:hover {
-        background-position: 0 0;
-    }
-
-=======
     
     a.send-happy:hover {
-        background-position: 0 0;
+        background-position: 0 1;
     }
     
->>>>>>> bdfec63fdfecd11f6a742d12037d5065e5222ee6
     #page-wrapper #content-wrapper ul.pages li.im-happy-two {
         height:400px;
     }

@@ -62,7 +62,7 @@ $(document).ready(function() {
 
 
                     </li>
-                    <li class="go-button"><a href="#" class="send-because" onclick="postToFeed();"><img src="img/go_button.jpg" class="go"></a></li>
+                    <li class="go-button"><a href="#" class="send-because"><img src="img/go_button.jpg" class="go"></a></li>
                   </ul>
                   <div class="clear"></div>
                   <div id="do-again">
@@ -76,7 +76,7 @@ $(document).ready(function() {
               </div>
             </div>
             <div id="social-bar">
-              Share the <img src="img/heart-icon.png" class="icon"/> on <a href="#" onclick="postToFeed();"><img src="img/facebook.png" class="icon"/></a> &amp; <a href="http://twitter.com/#!/happstr" target="_blank"><img src="img/twitter.png" class="icon"/></a>
+              Share the <img src="img/heart-icon.png" class="icon"/> on <a href="#" onclick="postToFeed(); return false;"><img src="img/facebook.png" class="icon"/></a> &amp; <a href="http://twitter.com/#!/happstr" target="_blank"><img src="img/twitter.png" class="icon"/></a>
             </div>
           </div>
         </li>
@@ -130,7 +130,7 @@ $(document).ready(function() {
 	      function postToFeed() {
 		
 			 var facebookString;
-		     var happyString ='Rob is happy ';
+		     var happyString ='I am happy ';
 		     var becauseString = $('.happy-input').val();
 
 		     if(becauseString !== '') {
@@ -155,7 +155,6 @@ $(document).ready(function() {
 
 	        FB.ui(obj, callback);
 	      }
-
 	    </script>
 
   <script type="text/javascript">
