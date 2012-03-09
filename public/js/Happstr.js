@@ -102,7 +102,7 @@ var Navigate = (function (obj) {
 
   function getMarkers(lat, lon) {
     _this.markers = [];
-    $.getJSON('api/checkins?lat='+lat+'&lon='+lon+'&range=100000', 
+    $.getJSON('api/checkins?lat='+lat+'&lon='+lon+'&range=100000',
               function(msg) {
                 $.each(msg, function(key, val) {
                   // console.log(val.source[0], val.source[1]);
