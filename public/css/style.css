@@ -100,6 +100,11 @@ body {
     height:153px;
     padding-top:10px;
     border-bottom:3px solid #ffde15;
+    position:static;
+    top:0px;
+    left:0px;
+    z-index:1200;
+    background:#FFF;
 }
 
 #page-wrapper #nav-wrapper #logo-wrapper {
@@ -214,11 +219,16 @@ div.center {
 }
 
 a.send-happy {
-    height:177px;
+    height:178px;
     width:178px;
-    background: url(../img/demo_button.jpg) top left no-repeat;
+    background: url(../img/happstr_button_sprite_178.jpg) no-repeat;
     display:block;
     margin: 0 auto;
+    background-position: 0 0;
+}
+
+a.send-happy:hover {
+    background-position: 0 -178px;
 }
 
 
@@ -355,7 +365,7 @@ div.because-success {
 */
 
 #page-wrapper #content-wrapper ul.pages li.about {
-   height:370px;
+   height:390px;
 }
 
 #page-wrapper #content-wrapper ul.pages li.about #frame {
@@ -378,6 +388,7 @@ div.because-success {
      font-size:17px;
      color:#CCC;
      line-height:20px;
+     margin-bottom:10px;
 }
 
 /**************************************************************************
@@ -465,12 +476,17 @@ border-bottom: solid 1px #25aae2;
 */
 
 @media screen and (max-device-width: 500px) {
-    /*body{display:none;}*/
+    body{
+        padding-top:130px;
+    }
     #page-wrapper #nav-wrapper {
         width:100%;
         height:130px;
         padding-top:5px;
         border-bottom:3px solid #ffde15;
+        position:fixed;
+        top:0px;
+        left:0px;
     }
     
     #page-wrapper #nav-wrapper #logo-wrapper {
@@ -729,9 +745,7 @@ border-bottom: solid 1px #25aae2;
          line-height:20px;
     }
     
-    #page-wrapper #content-wrapper ul.pages li.map #retain {
-        width:80%;
-    }
+
     
     #footer-wrapper ul.footer {
         width:250px;

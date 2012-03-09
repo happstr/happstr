@@ -1,8 +1,7 @@
 <html>
 <title>Happstr</title>
-<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
+<meta name="viewport" content="width=device-width; initial-scale=1; maximum-scale=1.0; user-scalable=0;" />
 <link rel="stylesheet" type="text/css" href="css/style.css">
-<link rel="stylesheet" media="text/css" href="css/mobilePhone.css" />
 
 <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDduiCZ1KHR48T5zOIGMzrhK7teVckQrOo&sensor=true"></script>
 <script type="text/javascript" src="vendor/js/jquery-1.7.1.min.js"></script>
@@ -14,8 +13,15 @@
 $(document).ready(function() {
 	Navigate.construct();
 	HappyProcess.construct();
+	
+	$(window).orientationchange(function(event){
+		
+		Navigate.globalSizeContent();
+		
+	});
 });
 </script>
+<script type="text/javascript" src="vendor/js/jquery.mobile-1.0.1.min.js"></script>
 
   <body>
 	<div id="fb-root"></div>
@@ -54,17 +60,15 @@ $(document).ready(function() {
 	  }
 	 </script>
     <div id="page-wrapper">
-		<div id="nav-wrapper">
-			<div class="center">
-				<a href="#" class="logo" onclick="Navigate.navigateTo(0); return false;"></a>
-				<div id="rule"></div>
-				<div id="button-wrapper">
-					<ul class="buttons-main">
-						<li><a href="#" class="nav-link active create-happy">Feeling Happy?</a></li>
-						<li><a href="#" class="nav-link find-happy">Find Happiness</a></li>
-					</ul>
-				</div>
-			</div> 
+		<div id="nav-wrapper"  data-role="header" data-position="fixed">
+			<a href="#" class="logo" onclick="Navigate.navigateTo(0); return false;"></a>
+			<div id="rule"></div>
+			<div id="button-wrapper">
+				<ul class="buttons-main">
+					<li><a href="#" class="nav-link active create-happy">Feeling Happy?</a></li>
+					<li><a href="#" class="nav-link find-happy">Find Happiness</a></li>
+				</ul>
+			</div>
 		</div>
 		<div id="content-wrapper">
 			<ul class="pages">
@@ -114,8 +118,14 @@ $(document).ready(function() {
 				<li class="about frames">
 					<div class="center">
 						<div id="frame">
-							<h2>About Happstr!</h2>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget tellus sed ligula facilisis viverra. Donec ornare est id risus sodales a fermentum orci euismod. Donec mollis dolor tempor lorem pretium non fermentum neque accumsan. Ut semper, augue a semper imperdiet, nibh tortor aliquet orci, a tincidunt eros felis et leo. Phasellus commodo bibendum consequat. Pellentesque nec dui quis sem pretium vulputate lacinia quis elit. Morbi condimentum lacinia ante, id pharetra nisl varius et. Donec vel dui magna. Morbi ullamcorper leo vitae quam luctus hendrerit.</p>
+							<h2>Find your happy place!</h2>
+<p>Our mission is simple: increase global happiness. In the U.S. alone 16 million people suffer from depression and less than 30 percent are seeking adequate help. At the same time there's mounting evidence that suggests your happiness can be easily elevated by the network effect of those around you. With Happstr you can find your happy place.</p>
+
+<p>We make a simple web app for you to keep track of your happiness.</p>
+							
+<p>Happster, is a “psychographic location check-in service,” a way to log the emotions you feel when you check in at different places.</p>
+
+<p>With Happstr you can see when people are delighted, mapped within your area or around the world. Feeling pretty good? Let others know. When you tap on the happy button your elation gets tagged anonymously to a global map. Feeling down? Discover the happiness aroung you and around the world.</p>
 						</div>
 					</div>
 				<li>
@@ -126,7 +136,7 @@ $(document).ready(function() {
 				<ul class="footer">
 					<li><a href="#" class="find-happy-place"></a></li>
 					<li><a href="#" class="footer-link link-border" onclick="Navigate.navigateTo(3); return false;">About Happstr</a></li>
-					<li><a href="#" class="footer-link">Global Happiness Feed</a></li>
+					<!--<li><a href="#" class="footer-link">Global Happiness Feed</a></li>-->
 				</ul>
 			</div>
 		</div>

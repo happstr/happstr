@@ -34,6 +34,11 @@ var Navigate = (function (obj) {
         //$('#content-wrapper').css({left: - (pageWidth * _this.idx)});
         $('ul.pages').css({left: - (pageWidth * _this.idx)});
   }
+  
+  _this.globalSizeContent = function() {
+      alert('size');
+      sizeContent();
+  }
 
   function setStructure(target) {
       /*if(target !==0) {
@@ -90,7 +95,7 @@ var Navigate = (function (obj) {
     }
     
     else {
-        alert('return');
+
         return;
         
     }
@@ -241,9 +246,10 @@ var HappyProcess = (function (obj) {
       });
 
       $('.send-because').click(function() {
-          //postBecause($('.happy-input').val());
-            postSocial();
-            postBecause();
+            //postSocial();
+            postBecause($('.happy-input').val());
+            
+
       });
   }
 
