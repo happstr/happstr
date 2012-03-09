@@ -111,6 +111,8 @@ class Happstr < Sinatra::Base
   end
 
   get '/dev/bootstrap' do
+    return true # remove to actually run this
+
     downtown_austin = [30.264924, -97.741413]
 
     (1..10).each do |lat|
