@@ -596,9 +596,14 @@ border-bottom: solid 1px #25aae2;
     a.send-happy {
         height:119px;
         width:119px;
-        background: url(../img/mobiel_button.png) top left no-repeat;
+        background: url(../img/happstr_button_sprite_119.jpg) no-repeat;
+        background-position: 0 -119px;
         display:block;
         margin: 0 auto;
+    }
+    
+    a.send-happy:hover {
+        background-position: 0 0;
     }
     
     #page-wrapper #content-wrapper ul.pages li.im-happy-two {
