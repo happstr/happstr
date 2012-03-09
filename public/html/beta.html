@@ -4,6 +4,8 @@
 <meta name="apple-mobile-web-app-capable" content="yes"/>
 <link rel="stylesheet" type="text/css" href="css/style.css">
 
+<link rel="apple-touch-icon" href="img/happstr_apple_touch_icon.png" />
+
 <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDduiCZ1KHR48T5zOIGMzrhK7teVckQrOo&sensor=true"></script>
 <script type="text/javascript" src="vendor/js/jquery-1.7.1.min.js"></script>
 
@@ -27,7 +29,30 @@ $(document).ready(function() {
 
   <body>
   <div id="fb-root"></div>
+<<<<<<< HEAD
   <script src='http://connect.facebook.net/en_US/all.js'></script>
+=======
+  <script type="text/javascript" src="http://connect.facebook.net/en_US/all.js"></script>
+  <script type="text/javascript">
+    FB.init({
+     appId  : '392198554141811',
+     status : true,
+     cookie : true,
+     xfbml  : true
+    });
+  </script>
+  <script type="text/javascript">
+    function streamPublish(happyMessage){
+		FB.ui({
+		        method: 'feed',
+		        name: 'Happstr',
+		        link: 'http://www.happstr.com/prototype',
+		        picture: 'http://www.happstr.com/img/share_logo.jpg',
+		        caption: 'Find Your Happy Place',
+		        description: happyMessage});
+     }
+   </script>
+>>>>>>> bb81124b91877501b48b1803eee3ea2ea88344bf
     <div id="page-wrapper">
     <div id="nav-fix"></div>
     <div id="nav-wrapper"  data-role="header" data-position="fixed">
