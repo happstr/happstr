@@ -12,138 +12,151 @@
 
 <script type="text/javascript">
 $(document).ready(function() {
-	Navigate.construct();
-	HappyProcess.construct();
-	
-	$(window).orientationchange(function(event){
-		
-		Navigate.globalSizeContent();
-		$('body, html').animate({scrollTop:0}, 'fast');
-		
-	});
+  Navigate.construct();
+  HappyProcess.construct();
+
+  $(window).orientationchange(function(event){
+
+    Navigate.globalSizeContent();
+    $('body, html').animate({scrollTop:0}, 'fast');
+
+  });
 });
 </script>
 <script type="text/javascript" src="vendor/js/jquery.mobile-1.0.1.min.js"></script>
 
   <body>
-	<div id="fb-root"></div>
-	<script type="text/javascript" src="http://connect.facebook.net/en_US/all.js"></script>
-	<script type="text/javascript">
-	  FB.init({
-	   appId  : '392198554141811',
-	   status : true,
-	   cookie : true,
-	   xfbml  : true 
-	  });
-	</script>
-	<script type="text/javascript">
-	  function streamPublish(name, description, hrefTitle, hrefLink, userPrompt, imageSrc, imageUrl){
-	   FB.ui(
-	    {
-	     method: 'stream.publish',
-	     message: 'Publish Hppstr',
-	     attachment: {
-	     media: [{type: 'image',src: imageSrc,href: imageUrl}], 
-	     name: name,
-	     caption: '',
-	     description: (description),
-	    href: hrefLink
-	},
-	action_links: [{ text: hrefTitle, href: hrefLink }],
-	user_prompt_message: userPrompt
-	},
-	  function(response) {
-		
-	 // do something when you have posted
-	   });
-	  }
-	  function publishStream(happyMessage){
-	   streamPublish("Stream Publish", happyMessage , 'do something cool', 'http://example.com', "My fb app", 'http://bit.ly/AJTnf', 'http://bit.ly/hifZk');
-	  }
-	 </script>
+  <div id="fb-root"></div>
+  <script type="text/javascript" src="http://connect.facebook.net/en_US/all.js"></script>
+  <script type="text/javascript">
+    FB.init({
+     appId  : '392198554141811',
+     status : true,
+     cookie : true,
+     xfbml  : true
+    });
+  </script>
+  <script type="text/javascript">
+    function streamPublish(name, description, hrefTitle, hrefLink, userPrompt, imageSrc, imageUrl){
+     FB.ui(
+      {
+       method: 'stream.publish',
+       message: 'Publish Hppstr',
+       attachment: {
+       media: [{type: 'image',src: imageSrc,href: imageUrl}],
+       name: name,
+       caption: '',
+       description: (description),
+      href: hrefLink
+  },
+  action_links: [{ text: hrefTitle, href: hrefLink }],
+  user_prompt_message: userPrompt
+  },
+    function(response) {
+
+   // do something when you have posted
+     });
+    }
+    function publishStream(happyMessage){
+     streamPublish("Stream Publish", happyMessage , 'do something cool', 'http://example.com', "My fb app", 'http://bit.ly/AJTnf', 'http://bit.ly/hifZk');
+    }
+   </script>
     <div id="page-wrapper">
-		<div id="nav-fix"></div>
-		<div id="nav-wrapper"  data-role="header" data-position="fixed">
-			<a href="#" class="logo" onclick="Navigate.navigateTo(0); return false;"></a>
-			<div id="rule"></div>
-			<div id="button-wrapper">
-				<ul class="buttons-main">
-					<li><a href="#" class="nav-link active create-happy">Feeling Happy?</a></li>
-					<li><a href="#" class="nav-link find-happy">Find Happiness</a></li>
-				</ul>
-			</div>
-		</div>
-		<div id="content-wrapper">
-			<ul class="pages">
-				<li class="im-happy frames" id="im-happy">
-					<div class="center">
-						<div id="retain">
-							<h2>FEELING<br /><span>HAPPY?</span></h2>
-							<a href="#" class="send-happy"></a>
-						</div>
-					</div>
-				</li>
-				<li class="im-happy-two frames" id="im-happy-two">
-					<div id="top-content">
-						<div class="center">
-							<div id="retain">
-								<div class="because-enter">
-								<h2>I'm happy because...</h2>
-									<ul class="input-because">
-										<li class="input">
-											<input type="text" class="happy-input"/>
-											
-									
-										</li>
-										<li class="go-button"><a href="#" class="send-because"><img src="img/go_button.jpg" class="go"></a></li>
-									</ul> 
-									<div class="clear"></div>
-									<div id="do-again">
-										<div id="input-wrapper"><a href="#" class="do-again-link">Do it again.</div></a>
-									</div>
-								</div>
-								<div class="because-success" style="display:none;">
-									<h2>DIDN'T THAT FEEL<br />GREAT?</h2>
-									<div id="input-wrapper"><a href="#" class="do-again-link">Do it again.</div></a>
-								</div>
-							</div>
-						</div>
-						<div id="social-bar">
-							Share the <img src="img/heart-icon.png" class="icon"/> on <img src="img/facebook.png" class="icon"/> &amp; <a href="http://twitter.com/#!/happstr" target="_blank"><img src="img/twitter.png" class="icon"/></a>
-						</div>
-					</div>
-				</li> 
-		        <li class="frames map">
-					<div id="retain">
-              			<div id="map_canvas" style="width:100%; height:100%"></div>
-					</div>
-		        </li>
-				<li class="about frames">
-					<div class="center">
-						<div id="frame">
-							<h2>Find your happy place!</h2>
+    <div id="nav-fix"></div>
+    <div id="nav-wrapper"  data-role="header" data-position="fixed">
+      <a href="#" class="logo" onclick="Navigate.navigateTo(0); return false;"></a>
+      <div id="rule"></div>
+      <div id="button-wrapper">
+        <ul class="buttons-main">
+          <li><a href="#" class="nav-link active create-happy">Feeling Happy?</a></li>
+          <li><a href="#" class="nav-link find-happy">Find Happiness</a></li>
+        </ul>
+      </div>
+    </div>
+    <div id="content-wrapper">
+      <ul class="pages">
+        <li class="im-happy frames" id="im-happy">
+          <div class="center">
+            <div id="retain">
+              <h2>FEELING<br /><span>HAPPY?</span></h2>
+              <a href="#" class="send-happy"></a>
+            </div>
+          </div>
+        </li>
+        <li class="im-happy-two frames" id="im-happy-two">
+          <div id="top-content">
+            <div class="center">
+              <div id="retain">
+                <div class="because-enter">
+                <h2>I'm happy because...</h2>
+                  <ul class="input-because">
+                    <li class="input">
+                      <input type="text" class="happy-input"/>
+
+
+                    </li>
+                    <li class="go-button"><a href="#" class="send-because"><img src="img/go_button.jpg" class="go"></a></li>
+                  </ul>
+                  <div class="clear"></div>
+                  <div id="do-again">
+                    <div id="input-wrapper"><a href="#" class="do-again-link">Do it again.</div></a>
+                  </div>
+                </div>
+                <div class="because-success" style="display:none;">
+                  <h2>DIDN'T THAT FEEL<br />GREAT?</h2>
+                  <div id="input-wrapper"><a href="#" class="do-again-link">Do it again.</div></a>
+                </div>
+              </div>
+            </div>
+            <div id="social-bar">
+              Share the <img src="img/heart-icon.png" class="icon"/> on <img src="img/facebook.png" class="icon"/> &amp; <a href="http://twitter.com/#!/happstr" target="_blank"><img src="img/twitter.png" class="icon"/></a>
+            </div>
+          </div>
+        </li>
+            <li class="frames map">
+          <div id="retain">
+                    <div id="map_canvas" style="width:100%; height:100%"></div>
+          </div>
+            </li>
+        <li class="about frames">
+          <div class="center">
+            <div id="frame">
+              <h2>Find your happy place!</h2>
 <p>Our mission is simple: increase global happiness. In the U.S. alone 16 million people suffer from depression and less than 30 percent are seeking adequate help. At the same time there's mounting evidence that suggests your happiness can be easily elevated by the network effect of those around you. With Happstr you can find your happy place.</p>
 
 <p>We make a simple web app for you to keep track of your happiness.</p>
-							
+
 <p>Happster, is a “psychographic location check-in service,” a way to log the emotions you feel when you check in at different places.</p>
 
 <p>With Happstr you can see when people are delighted, mapped within your area or around the world. Feeling pretty good? Let others know. When you tap on the happy button your elation gets tagged anonymously to a global map. Feeling down? Discover the happiness aroung you and around the world.</p>
-						</div>
-					</div>
-				<li>
-			</ul>
-		</div>
-		<div id="footer-wrapper">
-			<div class="center">
-				<ul class="footer">
-					<li><a href="#" class="find-happy-place"></a></li>
-					<li><a href="#" class="footer-link link-border" onclick="Navigate.navigateTo(3); return false;">About Happstr</a></li>
-					<!--<li><a href="#" class="footer-link">Global Happiness Feed</a></li>-->
-				</ul>
-			</div>
-		</div>
-	</div>
+
+<p>Happstr was built in March 2012 on <a href="http://startupbus.com/americas/tribes/new-york" target="_blank" class="blue-link">TheStartupBus</a> from New York to Austin.</p>
+
+<p>Meet the team:</p>
+
+<ul class="small-blue">
+  <li><a href="http://www.twitter.com/pnts" target="_blank" class="blue-link">Andrea Mignolo - @pnts</a></li>
+  <li><a href="http://www.twitter.com/b9punk" target="_blank" class="blue-link">Jennifer Gergen - @b9punk</a></li>
+  <li><a href="http://www.twitter.com/freenerd" target="_blank" class="blue-link">Johan Uhle - @freenerd</a></li>
+  <li><a href="http://www.twitter.com/natecooper" target="_blank" class="blue-link">Nate Cooper - @natecooper</a></li>
+  <li><a href="http://www.twitter.com/rickyrobinett" target="_blank" class="blue-link">Ricky Robinett - @rickyrobinett</a></li>
+  <li><a href="http://www.twitter.com/RobHanleyDesign" target="_blank" class="blue-link">Robert Hanley  - @RobHanleyDesign</a></li>
+</ul>
+            </div>
+          </div>
+        <li>
+      </ul>
+    </div>
+    <div id="footer-wrapper">
+      <div class="center">
+        <ul class="footer">
+          <li><a href="#" class="find-happy-place"></a></li>
+          <li><a href="#" class="footer-link link-border" onclick="Navigate.navigateTo(3); return false;">About Happstr</a></li>
+          <!--<li><a href="#" class="footer-link">Global Happiness Feed</a></li>-->
+        </ul>
+      </div>
+    </div>
+  </div>
 
  <script type="text/javascript">
   var _gaq = _gaq || [];

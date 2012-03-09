@@ -11,62 +11,62 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}	
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
 
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
-	display: block;
+  display: block;
 }
 
 html {
-	position: relative;
-	top: 0px;
+  position: relative;
+  top: 0px;
 }
 
 ol, ul {
-	list-style: none;
+  list-style: none;
 }
 
 blockquote, q {
-	quotes: none;
+  quotes: none;
 }
 
 blockquote:before, blockquote:after,
 q:before, q:after {
-	content: '';
-	content: none;
+  content: '';
+  content: none;
 }
 
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 *.clear{
-	display: block;
-	clear: both;
-	height: 0;
-	font-size: 0;	
+  display: block;
+  clear: both;
+  height: 0;
+  font-size: 0;
 }
 a, a:link, a:hover, a:active, a:visited{
-	outline: none !important;
+  outline: none !important;
 }
 
 @font-face {
-	font-family: 'londrina';
-	src: url('/fonts/londrinasolid-regular-webfont.eot?#iefix') format('embedded-opentype'), 
-	     url('/fonts/londrinasolid-regular-webfont.woff') format('woff'), 
-	     url('/fonts/londrinasolid-regular-webfont.ttf')  format('truetype'),
-	     url('/fonts/londrinasolid-regular-webfont.svg#svgFontName') format('svg');
+  font-family: 'londrina';
+  src: url('/fonts/londrinasolid-regular-webfont.eot?#iefix') format('embedded-opentype'),
+       url('/fonts/londrinasolid-regular-webfont.woff') format('woff'),
+       url('/fonts/londrinasolid-regular-webfont.ttf')  format('truetype'),
+       url('/fonts/londrinasolid-regular-webfont.svg#svgFontName') format('svg');
 }
 
 /**************************************************************************
@@ -75,7 +75,7 @@ a, a:link, a:hover, a:active, a:visited{
 
 body {
     font-size: 100%;
-    font-family: arial, helvetica, san-serif;    
+    font-family: arial, helvetica, san-serif;
 }
 
 .clear {clear:both;}
@@ -83,6 +83,17 @@ body {
 .fl-left {float:left;}
 
 .fl-right {float:right;}
+
+.small-blue {
+  font-family: 'lucida grande', lucida sans, arial, sans-serif;
+  font-size:12px;
+  line-height:18px;
+  color:#25AAE2;
+}
+
+a.blue-link:link, a.blue-link:active, a.blue-link:visited, a.blue-link:hover {
+  color:#25AAE2;
+}
 
 
 /**************************************************************************
@@ -163,7 +174,7 @@ a.nav-link:link, a.nav-link:active, a.nav-link:visited, a.nav-link:hover {
     -moz-border-radius: 10px;
     border-radius: 10px;
     font-family: 'lucida grande', lucida sans, arial, sans-serif;
-   
+
 }
 
 .active {
@@ -315,7 +326,7 @@ f
 #page-wrapper #content-wrapper ul.pages li.im-happy-two ul.input-because li.input #do-again {
     width:100%;
     text-align:center;
-    
+
 }
 
 a.do-again-link:link, a.do-again-link:active, a.do-again-link:visited, a.do-again-link:hover {
@@ -324,7 +335,7 @@ a.do-again-link:link, a.do-again-link:active, a.do-again-link:visited, a.do-agai
     font-style:italic;
     display:block;
     margin-top:20px;
-    
+
 }
 
 #page-wrapper #content-wrapper ul.pages li.im-happy-two ul.input-because li.go-button {
@@ -368,7 +379,7 @@ div.because-success {
 */
 
 #page-wrapper #content-wrapper ul.pages li.about {
-   height:390px;
+   height:690px;
 }
 
 #page-wrapper #content-wrapper ul.pages li.about #frame {
@@ -385,7 +396,7 @@ div.because-success {
      margin-bottom:20px;
      margin-top:10px;
  }
- 
+
 #page-wrapper #content-wrapper ul.pages li.about p {
      font-family: 'lucida grande', lucida sans, arial, sans-serif;
      font-size:17px;
@@ -398,7 +409,7 @@ div.because-success {
 * BEGIN I'M MAP STYLES
 */
 #page-wrapper #content-wrapper ul.pages li.map {
-    
+
 }
 
 #page-wrapper #content-wrapper ul.pages li.map #retain {
@@ -414,7 +425,7 @@ div.because-success {
     height:145px;
     border-top:3px solid #ffde15;
     width:100%;
-    
+
 }
 
 #footer-wrapper ul.footer {
@@ -482,11 +493,11 @@ border-bottom: solid 1px #25aae2;
     /*body{
         padding-top:130px;
     }*/
-    
+
     #nav-fix {
         height:135px;
     }
-    
+
     #page-wrapper #nav-wrapper {
         width:100%;
         height:130px;
@@ -496,7 +507,7 @@ border-bottom: solid 1px #25aae2;
         top:0px;
         left:0px;
     }
-    
+
     #page-wrapper #nav-wrapper #logo-wrapper {
         height:90px;
         width:100%;
@@ -547,7 +558,7 @@ border-bottom: solid 1px #25aae2;
         font-family: 'lucida grande', lucida sans, arial, sans-serif;
 
     }
-    
+
     #page-wrapper #content-wrapper {
         width:100%;
         overflow: hidden;
@@ -555,7 +566,7 @@ border-bottom: solid 1px #25aae2;
         height:270px;
        /* background:#bfedeb;*/
     }
-    
+
     #page-wrapper #content-wrapper ul.pages {
         height:270px;
         left:0px;
@@ -569,7 +580,7 @@ border-bottom: solid 1px #25aae2;
         overflow: hidden;
         float:left;
     }
-    
+
     #page-wrapper #content-wrapper ul.pages li.im-happy {
         height:270px;
     }
@@ -587,12 +598,12 @@ border-bottom: solid 1px #25aae2;
         line-height:50px;
         margin-bottom:10px;
     }
-    
+
     #page-wrapper #content-wrapper ul.pages li.im-happy span {
         font-size:60px;
         font-family: 'londrina', helvetica, sans-serif;
     }
-    
+
     a.send-happy {
         height:119px;
         width:119px;
@@ -601,11 +612,11 @@ border-bottom: solid 1px #25aae2;
         display:block;
         margin: 0 auto;
     }
-    
+
     a.send-happy:hover {
         background-position: 0 0;
     }
-    
+
     #page-wrapper #content-wrapper ul.pages li.im-happy-two {
         height:400px;
     }
@@ -641,7 +652,7 @@ border-bottom: solid 1px #25aae2;
         width:300px;
         margin: 0 auto;
         margin-top:10px;
-        text-align:left;  
+        text-align:left;
         height:400px;
         /*background:#000;*/
     }
@@ -687,16 +698,16 @@ border-bottom: solid 1px #25aae2;
         text-align:center;
         margin-top:5px;
     }
-    
+
     #page-wrapper #content-wrapper ul.pages li.im-happy-two ul.input-because li.go-button {
         float:left;
         height:35px;
         width:40px;
        /* background:#ddd;*/
         margin-left:5px;
-        
+
     }
-    
+
 
 
     #page-wrapper #content-wrapper ul.pages li.im-happy-two ul.input-because li img.go {
@@ -732,9 +743,9 @@ border-bottom: solid 1px #25aae2;
         line-height:40px;
         margin-bottom:10px;
     }
-    
+
     #page-wrapper #content-wrapper ul.pages li.about {
-       height:470px;
+       height:970px;
     }
 
     #page-wrapper #content-wrapper ul.pages li.about #frame {
@@ -758,9 +769,9 @@ border-bottom: solid 1px #25aae2;
          color:#CCC;
          line-height:20px;
     }
-    
 
-    
+
+
     #footer-wrapper ul.footer {
         width:250px;
         margin: 0 auto;
@@ -768,7 +779,7 @@ border-bottom: solid 1px #25aae2;
         margin-bottom:20px;
         height:100px;
     }
-    
+
 }
 
 
