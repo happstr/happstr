@@ -63,6 +63,7 @@ var Navigate = (function (obj) {
         $('.buttons-main .find-happy').addClass('active');
         reset();
         setupMap();
+        getLocation();
       });
 
       $('.do-again-link').click(function(ev) {
@@ -90,7 +91,7 @@ var Navigate = (function (obj) {
 
     var myOptions = {
       center: new google.maps.LatLng(lat, lon),
-      zoom: 8,
+      zoom: 14,
       mapTypeId: google.maps.MapTypeId.ROADMAP
     };
 
@@ -98,6 +99,19 @@ var Navigate = (function (obj) {
     document.getElementById("map_canvas"), myOptions);
 
     getMarkers(lat, lon);
+  }
+
+  function getLocation() {
+    if(navigator.geolocation) {
+      function hasPosition(position) {
+        var point = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+        _this.map.setCenter(point);
+      }
+
+      navigator.geolocation.getCurrentPosition(hasPosition);
+    } else {
+      // nothing to do
+    }
   }
 
   function getMarkers(lat, lon) {
