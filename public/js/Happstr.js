@@ -208,9 +208,8 @@ var HappyProcess = (function (obj) {
           comment: because
         },
         success: function(data) {
-            //$('body, html').animate({scrollTop:0}, 'fast');
-            //$.mobile.silentScroll(100);
-            postSocial();
+          //$('body, html').animate({scrollTop:0}, 'fast');
+          //$.mobile.silentScroll(100);
           // do something?
         }
       })

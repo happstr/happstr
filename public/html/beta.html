@@ -31,7 +31,30 @@ $(document).ready(function() {
 
   <body>
   <div id="fb-root"></div>
+<<<<<<< HEAD
   <script src='http://connect.facebook.net/en_US/all.js'></script>
+=======
+  <script type="text/javascript" src="http://connect.facebook.net/en_US/all.js"></script>
+  <script type="text/javascript">
+    FB.init({
+     appId  : '392198554141811',
+     status : true,
+     cookie : true,
+     xfbml  : true
+    });
+  </script>
+  <script type="text/javascript">
+    function streamPublish(happyMessage){
+		FB.ui({
+		        method: 'feed',
+		        name: 'Happstr',
+		        link: 'http://www.happstr.com/prototype',
+		        picture: 'http://www.happstr.com/img/share_logo.jpg',
+		        caption: 'Find Your Happy Place',
+		        description: happyMessage});
+     }
+   </script>
+>>>>>>> bb81124b91877501b48b1803eee3ea2ea88344bf
     <div id="page-wrapper">
     <div id="nav-fix"></div>
     <div id="nav-wrapper"  data-role="header" data-position="fixed">
