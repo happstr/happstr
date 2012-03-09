@@ -612,11 +612,19 @@ border-bottom: solid 1px #25aae2;
         display:block;
         margin: 0 auto;
     }
+<<<<<<< HEAD
 
     a.send-happy:hover {
         background-position: 0 0;
     }
 
+=======
+    
+    a.send-happy:hover {
+        background-position: 0 0;
+    }
+    
+>>>>>>> bdfec63fdfecd11f6a742d12037d5065e5222ee6
     #page-wrapper #content-wrapper ul.pages li.im-happy-two {
         height:400px;
     }
