@@ -185,7 +185,8 @@ var HappyProcess = (function (obj) {
      }
      
       
-     streamPublish(facebookString);
+     //streamPublish(facebookString);
+     //postToFeed();
      
   }
 
@@ -207,8 +208,8 @@ var HappyProcess = (function (obj) {
           comment: because
         },
         success: function(data) {
-            $('body, html').animate({scrollTop:0}, 'fast');
-            $.mobile.silentScroll(100);
+            //$('body, html').animate({scrollTop:0}, 'fast');
+            //$.mobile.silentScroll(100);
             postSocial();
           // do something?
         }

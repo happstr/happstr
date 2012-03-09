@@ -31,26 +31,7 @@ $(document).ready(function() {
 
   <body>
   <div id="fb-root"></div>
-  <script type="text/javascript" src="http://connect.facebook.net/en_US/all.js"></script>
-  <script type="text/javascript">
-    FB.init({
-     appId  : '392198554141811',
-     status : true,
-     cookie : true,
-     xfbml  : true
-    });
-  </script>
-  <script type="text/javascript">
-    function streamPublish(happyMessage){
-		FB.ui({
-		        method: 'feed',
-		        name: 'Happstr',
-		        link: 'http://www.happstr.com/prototype',
-		        picture: 'http://www.happstr.com/img/share_logo.jpg',
-		        caption: 'Find Your Happy Place',
-		        description: happyMessage});
-     }
-   </script>
+  <script src='http://connect.facebook.net/en_US/all.js'></script>
     <div id="page-wrapper">
     <div id="nav-fix"></div>
     <div id="nav-wrapper"  data-role="header" data-position="fixed">
@@ -85,7 +66,7 @@ $(document).ready(function() {
 
 
                     </li>
-                    <li class="go-button"><a href="#" class="send-because"><img src="img/go_button.jpg" class="go"></a></li>
+                    <li class="go-button"><a href="#" class="send-because" onclick="postToFeed();"><img src="img/go_button.jpg" class="go"></a></li>
                   </ul>
                   <div class="clear"></div>
                   <div id="do-again">
@@ -94,12 +75,12 @@ $(document).ready(function() {
                 </div>
                 <div class="because-success" style="display:none;">
                   <h2>DIDN'T THAT FEEL<br />GREAT?</h2>
-                  <div id="input-wrapper"><a href="#" class="do-again-link">Do it again.</div></a>
+                  <div id="input-wrapper"><a href="#" class="do-again-link" >Do it again.</div></a>
                 </div>
               </div>
             </div>
             <div id="social-bar">
-              Share the <img src="img/heart-icon.png" class="icon"/> on <img src="img/facebook.png" class="icon"/> &amp; <a href="http://twitter.com/#!/happstr" target="_blank"><img src="img/twitter.png" class="icon"/></a>
+              Share the <img src="img/heart-icon.png" class="icon"/> on <a href="#" onclick="postToFeed();"><img src="img/facebook.png" class="icon"/></a> &amp; <a href="http://twitter.com/#!/happstr" target="_blank"><img src="img/twitter.png" class="icon"/></a>
             </div>
           </div>
         </li>
@@ -147,6 +128,39 @@ $(document).ready(function() {
       </div>
     </div>
   </div>
+	<script> 
+	      FB.init({appId: "392198554141811", status: true, cookie: true});
+
+	      function postToFeed() {
+		
+			 var facebookString;
+		     var happyString ='Rob is happy ';
+		     var becauseString = $('.happy-input').val();
+
+		     if(becauseString !== '') {
+		         facebookString = happyString + 'because ' + becauseString;
+		     } else {
+		         facebookString = happyString;
+		     }
+
+	        // calling the API ...
+	        var obj = {
+	          method: 'feed',
+	          link: 'https://www.hapster.com/prototype',
+	          picture: 'http://www.hapstr.com/img/share_logo.jpg',
+	          name: 'Happstr',
+	          caption: 'Tap into your happiness with Happstr',
+	          description: facebookString
+	        };
+
+	        function callback(response) {
+	          document.getElementById('msg').innerHTML = "Post ID: " + response['post_id'];
+	        }
+
+	        FB.ui(obj, callback);
+	      }
+
+	    </script>
 
   <script type="text/javascript">
 
