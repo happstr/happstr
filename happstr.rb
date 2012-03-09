@@ -40,6 +40,10 @@ class Happstr < Sinatra::Base
     send_file File.join(settings.public_folder, 'html/beta.html')
   end
 
+  get '/beta' do
+    redirect '/prototype'
+  end
+
   get '/map' do
     send_file File.join(settings.public_folder, 'html/map.html')
   end
