@@ -69,13 +69,27 @@ a, a:link, a:hover, a:active, a:visited{
        url('/fonts/londrinasolid-regular-webfont.svg#svgFontName') format('svg');
 }
 
+@font-face {
+  font-family: 'BentonSans';
+  src: url('/fonts/BentonSans-Regular.otf');
+}
+
+@font-face {
+  font-family: 'Freehand575';
+  src: url('/fonts/208F23_0_0.eot'),
+       url('/fonts/208F23_0_0.eot?#iefix') format('embedded-opentype'),
+       url('/fonts/208F23_0_0.woff') format('woff'),
+       url('/fonts/208F23_0_0.ttf') format('truetype');
+       }
+
+
 /**************************************************************************
 * BEGIN REUSABLE STYLES
 */
 
 body {
     font-size: 100%;
-    font-family: arial, helvetica, san-serif;
+    font-family: 'BentonSans','Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .clear {clear:both;}
@@ -85,10 +99,24 @@ body {
 .fl-right {float:right;}
 
 .small-blue {
-  font-family: 'lucida grande', lucida sans, arial, sans-serif;
+  font-family: 'BentonSans','Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   font-size:12px;
   line-height:18px;
   color:#25AAE2;
+}
+
+#page-wrapper #content-wrapper ul.pages li.about p.scripty {
+  font-family: 'Freehand575', Georgia, serif;
+  font-size:48px;
+  line-height:64px;
+  color:#DF55A0;
+}
+
+#page-wrapper #content-wrapper ul.pages li.about p.scripty-small {
+  font-family: 'Freehand575', Georgia, serif;
+  font-size:28px;
+  line-height:44px;
+  color:#DF55A0;
 }
 
 a.blue-link:link, a.blue-link:active, a.blue-link:visited, a.blue-link:hover {
@@ -113,7 +141,7 @@ a.blue-link:link, a.blue-link:active, a.blue-link:visited, a.blue-link:hover {
     width:100%;
    /* height:153px;
     padding-top:10px;*/
-    border-bottom:3px solid #ffde15;
+    border-bottom:5px solid #ffde15;
     position:absolute;
     top:0px;
     left:0px;
@@ -144,40 +172,37 @@ a.logo {
 }
 
 #page-wrapper #nav-wrapper #button-wrapper {
-    height:50px;
     width:100%;
     /*background-color:#000;*/
 }
 
 #page-wrapper #nav-wrapper #button-wrapper ul.buttons-main {
     width:400px;
-    height:30px;
     /*background-color:#d402c8;*/
-    margin:0 auto;
-    padding-top:20px;
+    margin:10px auto;
+    padding: 10px 0;
 }
 
 #page-wrapper #nav-wrapper #button-wrapper ul.buttons-main li {
     width:200px;
     float:left;
     text-align:center;
+    margin-bottom:20px;
 }
 
 a.nav-link:link, a.nav-link:active, a.nav-link:visited, a.nav-link:hover {
     font-size:1.25em;
     color:#df55a0;
     text-decoration:none;
-    padding-left:14px;
-    padding-right:14px;
-    padding-top:3px;
-    padding-bottom:3px;
+    padding:10px;
+    margin:5px;
     -moz-border-radius: 10px;
     border-radius: 10px;
-    font-family: 'lucida grande', lucida sans, arial, sans-serif;
+    font-family: 'BentonSans','Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 
 }
 
-.active {
+.active, ul.buttons-main li a.nav-link:hover {
      background-color:#fbebee;
 }
 
@@ -233,12 +258,12 @@ div.center {
 }
 
 a.send-happy {
-    height:178px;
+    height:177px;
     width:178px;
     background: url(../img/happstr_button_sprite_178.jpg) no-repeat;
     display:block;
     margin: 0 auto;
-    background-position: 0 -178px;
+    background-position: 0 -174px;
 }
 
 a.send-happy:hover {
@@ -275,7 +300,7 @@ a.send-happy:hover {
     background:#ebf6f9;
     height:50px;
     text-align:center;
-    font-family: 'lucida grande', lucida sans, arial, sans-serif;
+    font-family: 'BentonSans','Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color:#000;
     padding-top:20px;
     font-size:20px;
@@ -316,7 +341,7 @@ a.send-happy:hover {
     height:35px;
     width:280px;
     background-color:#feffe8;
-    font-family: 'lucida grande', lucida sans, arial, sans-serif;
+    font-family: 'BentonSans','Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size:14px;
     border:none;
     border:0px;
@@ -351,7 +376,7 @@ a.do-again-link:link, a.do-again-link:active, a.do-again-link:visited, a.do-agai
 #page-wrapper #content-wrapper ul.pages li.im-happy-two h2 {
     color:#2bb673;
     font-size:35px;
-    font-family: 'lucida grande', lucida sans, arial, sans-serif;
+    font-family: 'BentonSans','Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     line-height:95px;
     font-weight:normal;
 }
@@ -379,7 +404,7 @@ div.because-success {
 */
 
 #page-wrapper #content-wrapper ul.pages li.about {
-   height:690px;
+   height:1050px;
 }
 
 #page-wrapper #content-wrapper ul.pages li.about #frame {
@@ -394,13 +419,14 @@ div.because-success {
      font-family: 'londrina', helvetica, sans-serif;
      line-height:50px;
      margin-bottom:20px;
-     margin-top:10px;
+     margin-top:40px;
+     text-transform: uppercase;
  }
 
 #page-wrapper #content-wrapper ul.pages li.about p {
-     font-family: 'lucida grande', lucida sans, arial, sans-serif;
-     font-size:17px;
-     color:#CCC;
+     font-family: 'BentonSans','Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+     font-size:14px;
+     color:#999;
      line-height:20px;
      margin-bottom:10px;
 }
@@ -448,25 +474,28 @@ a.footer-link:link, a.footer-link:active, a.footer-link:visited, a.footer-link:h
     color:#25aae2;
     font-size:14px;
     text-decoration:none;
-    width:170px;
+    width:220px;
     display:block;
-    padding-bottom:5px;
+    padding-bottom:10px;
     text-align:center;
     margin:0 auto;
-    font-family: 'lucida grande', lucida sans, arial, sans-serif;
+    font-family: 'BentonSans','Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 a.find-happy-place {
     width:250px;
-    height:37px;
-    background: url(../img/happy_place.jpg) top center no-repeat;
+    font-family: 'Freehand575', Georgia, serif;
+    font-size:40px;
+    line-height:44px;
+    color:#DF55A0;
     display:block;
-    border-bottom: solid 1px #25aae2;
+    border-bottom: solid 1px #D7EEF4;
     padding-bottom:5px;
+    text-decoration: none;
 }
 
 .link-border {
-border-bottom: solid 1px #25aae2;
+border-bottom: solid 1px #D7EEF4;
 }
 
 
@@ -555,7 +584,7 @@ border-bottom: solid 1px #25aae2;
         padding-bottom:2px;
         -moz-border-radius: 10px;
         border-radius: 10px;
-        font-family: 'lucida grande', lucida sans, arial, sans-serif;
+        font-family: 'BentonSans','Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 
     }
 
@@ -612,11 +641,11 @@ border-bottom: solid 1px #25aae2;
         display:block;
         margin: 0 auto;
     }
-    
+
     a.send-happy:hover {
         background-position: 0 1;
     }
-    
+
     #page-wrapper #content-wrapper ul.pages li.im-happy-two {
         height:400px;
     }
@@ -636,7 +665,7 @@ border-bottom: solid 1px #25aae2;
         background:#ebf6f9;
         height:47px;
         text-align:center;
-        font-family: 'lucida grande', lucida sans, arial, sans-serif;
+        font-family: 'BentonSans','Lucida Grande', 'Lucida Sans', Arial, sans-serif;
         color:#000;
         padding-top:20px;
         font-size:20px;
@@ -679,7 +708,7 @@ border-bottom: solid 1px #25aae2;
         height:35px;
         width:225px;
         background-color:#feffe8;
-        font-family: 'lucida grande', lucida sans, arial, sans-serif;
+        font-family: 'BentonSans','Lucida Grande', 'Lucida Sans', Arial, sans-serif;
         font-size:14px;
         border:none;
         border:0px;
@@ -717,7 +746,7 @@ border-bottom: solid 1px #25aae2;
     #page-wrapper #content-wrapper ul.pages li.im-happy-two h2 {
         color:#2bb673;
         font-size:23px;
-        font-family: 'lucida grande', lucida sans, arial, sans-serif;
+        font-family: 'BentonSans','Lucida Grande', 'Lucida Sans', Arial, sans-serif;
         line-height:25px;
         font-weight:normal;
         margin-top:10px;
@@ -764,7 +793,7 @@ border-bottom: solid 1px #25aae2;
      }
 
     #page-wrapper #content-wrapper ul.pages li.about p {
-         font-family: 'lucida grande', lucida sans, arial, sans-serif;
+         font-family: 'BentonSans','Lucida Grande', 'Lucida Sans', Arial, sans-serif;
          font-size:17px;
          color:#CCC;
          line-height:20px;
@@ -782,5 +811,23 @@ border-bottom: solid 1px #25aae2;
 
 }
 
+.photo-wrap{
+  float:left;
+  margin: 10px;
+  padding: 5px;
+  border: 1px solid #f2f2f2;
+  width: 200px;
+  text-align: left;
+}
+
+.photo-wrap a{
+    text-decoration: none;
+}
+
+.teamster{
+  display:block;
+  font-size:16px;
+  color:#DF55A0;
+}
 
 

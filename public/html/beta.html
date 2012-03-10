@@ -90,26 +90,28 @@ $(document).ready(function() {
         <li class="about frames">
           <div class="center">
             <div id="frame">
-              <h2>Find your happy place!</h2>
-<p>Our mission is simple: increase global happiness. In the U.S. alone 16 million people suffer from depression and less than 30 percent are seeking adequate help. At the same time there's mounting evidence that suggests your happiness can be easily elevated by the network effect of those around you. With Happstr you can find your happy place.</p>
+              <h2>Tap-in to global happiness.</h2>
 
-<p>We make a simple web app for you to keep track of your happiness.</p>
+<p>Happstr is about challenging yourself to tap-in every time you are happy, and share that happiness with your friends. Obviously, you're happier when your friends are happy (by about <strong>15%</strong>), but research shows that you're also <strong>10%</strong> happier when <em>their</em> friends are happy. Even crazier, a friend of a friend of a friend being happy increases your happiness by about <strong>6%</strong>. We aim to amplify world happiness by leveraging this network effect.</p>
 
-<p>Happster, is a “psychographic location check-in service,” a way to log the emotions you feel when you check in at different places.</p>
+<p class="scripty">Feeling pretty good? Let others know.</p>
 
-<p>With Happstr you can see when people are delighted, mapped within your area or around the world. Feeling pretty good? Let others know. When you tap on the happy button your elation gets tagged anonymously to a global map. Feeling down? Discover the happiness aroung you and around the world.</p>
+<p>Happstr starts with a simple web app for you to keep track of your happiness. When you tap the happy button your elation gets tagged to a global map. Then discover the happiness around you and explore happy tap-ins around the world. </p>
 
-<p>Happstr was built in March 2012 on <a href="http://startupbus.com/americas/tribes/new-york" target="_blank" class="blue-link">TheStartupBus</a> from New York to Austin.</p>
+<p class="scripty-small">Find your happy place.</p>
+
+<p>Happstr was built in March 2012 on <a href="http://startupbus.com/americas/tribes/new-york" target="_blank" class="blue-link">TheStartupBus</a> from New York City to Austin.</p>
 
 <p>Meet the team:</p>
 
 <ul class="small-blue">
-  <li><a href="http://www.twitter.com/pnts" target="_blank" class="blue-link">Andrea Mignolo - @pnts</a></li>
-  <li><a href="http://www.twitter.com/b9punk" target="_blank" class="blue-link">Jennifer Gergen - @b9punk</a></li>
-  <li><a href="http://www.twitter.com/freenerd" target="_blank" class="blue-link">Johan Uhle - @freenerd</a></li>
-  <li><a href="http://www.twitter.com/natecooper" target="_blank" class="blue-link">Nate Cooper - @natecooper</a></li>
-  <li><a href="http://www.twitter.com/rickyrobinett" target="_blank" class="blue-link">Ricky Robinett - @rickyrobinett</a></li>
-  <li><a href="http://www.twitter.com/RobHanleyDesign" target="_blank" class="blue-link">Robert Hanley  - @RobHanleyDesign</a></li>
+  <li class="photo-wrap"><a href="http://www.twitter.com/pnts" target="_blank" class="blue-link"><img src="img/pnts.jpg" alt="pnts"><span class="teamster">Andrea Mignolo</span>@pnts</a></li>
+  <li class="photo-wrap"><a href="http://www.twitter.com/b9punk" target="_blank" class="blue-link"><img src="img/jen.jpg" alt="jen"><span class="teamster">jennifer gergen</span>@b9punk</a></li>
+  <li class="photo-wrap"><a href="http://www.twitter.com/freenerd" target="_blank" class="blue-link"><img src="img/johan.jpg" alt="johan"><span class="teamster">Johan Uhle</span>@freenerd</a></li>
+  <li class="photo-wrap"><a href="http://www.twitter.com/natecooper" target="_blank" class="blue-link"><img src="img/nate.jpg" alt="nate"><span class="teamster">Nate Cooper</span>@natecooper</a></li>
+  <li class="photo-wrap"><a href="http://www.twitter.com/rickyrobinett" target="_blank" class="blue-link"><img src="img/ricky.jpg" alt="ricky"><span class="teamster">Ricky Robinett</span>@rickyrobinett</a></li>
+  <li class="photo-wrap"><a href="http://www.twitter.com/RobHanleyDesign" target="_blank" class="blue-link"><img src="img/rob.jpg" alt="ro"><span class="teamster">Robert Hanley</span>@RobHanleyDesign</a></li>
+
 </ul>
             </div>
           </div>
@@ -119,45 +121,46 @@ $(document).ready(function() {
     <div id="footer-wrapper">
       <div class="center">
         <ul class="footer">
-          <li><a href="#" class="find-happy-place"></a></li>
+          <li><a href="#" class="find-happy-place">Find your happy place.</a></li>
           <li><a href="#" class="footer-link link-border" onclick="Navigate.navigateTo(3); return false;">About Happstr</a></li>
+            <li ><a href="http://happstr.com" class="footer-link link-border"> Want more? Sign up for updates. </a></li>
           <!--<li><a href="#" class="footer-link">Global Happiness Feed</a></li>-->
         </ul>
       </div>
     </div>
   </div>
-	<script> 
-	      FB.init({appId: "392198554141811", status: true, cookie: true});
+  <script>
+        FB.init({appId: "392198554141811", status: true, cookie: true});
 
-	      function postToFeed() {
-		
-			 var facebookString;
-		     var happyString ='I am happy ';
-		     var becauseString = $('.happy-input').val();
+        function postToFeed() {
 
-		     if(becauseString !== '') {
-		         facebookString = happyString + 'because ' + becauseString;
-		     } else {
-		         facebookString = happyString;
-		     }
+       var facebookString;
+         var happyString ='I am happy ';
+         var becauseString = $('.happy-input').val();
 
-	        // calling the API ...
-	        var obj = {
-	          method: 'feed',
-	          link: 'https://www.hapster.com/prototype',
-	          picture: 'http://www.hapstr.com/img/share_logo.jpg',
-	          name: 'Happstr',
-	          caption: 'Tap into your happiness with Happstr',
-	          description: facebookString
-	        };
+         if(becauseString !== '') {
+             facebookString = happyString + 'because ' + becauseString;
+         } else {
+             facebookString = happyString;
+         }
 
-	        function callback(response) {
-	          document.getElementById('msg').innerHTML = "Post ID: " + response['post_id'];
-	        }
+          // calling the API ...
+          var obj = {
+            method: 'feed',
+            link: 'https://www.hapster.com/prototype',
+            picture: 'http://www.hapstr.com/img/share_logo.jpg',
+            name: 'Happstr',
+            caption: 'Tap into your happiness with Happstr',
+            description: facebookString
+          };
 
-	        FB.ui(obj, callback);
-	      }
-	    </script>
+          function callback(response) {
+            document.getElementById('msg').innerHTML = "Post ID: " + response['post_id'];
+          }
+
+          FB.ui(obj, callback);
+        }
+      </script>
 
   <script type="text/javascript">
 
