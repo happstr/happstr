@@ -25,6 +25,7 @@ class Happstr < Sinatra::Base
 
     field :created_at, :type => DateTime
     field :source,     :type => Array, :spacial => { return_array: true }
+    field :comment,    :type => String
 
     spacial_index :source
   end
@@ -82,6 +83,13 @@ class Happstr < Sinatra::Base
     end
 
     Checkin.create(data).to_json
+  end
+
+  get '/latest' do
+    Checkin.count().to_s + "<br />" +
+      Checkin.order_by({created_at: -1}).limit(40).to_a.map do |checkin|
+        "#{checkin.created_at} #{checkin.source}\t#{checkin.comment}"
+      end.join("<br />")
   end
 
   put '/api/checkins/:id' do
