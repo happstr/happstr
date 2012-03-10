@@ -63,7 +63,7 @@ class Happstr < Sinatra::Base
            #range && (0..10000).cover?(range)
       "Uhm ... you need to pass ?lat=&long= betwen -180..180 and optional range"
     else
-      Checkin.where(:source.near => [[lat, lon], range]).limit(200).to_a.to_json
+      Checkin.where(:source.near => [[lat, lon], range]).limit(500).to_a.to_json
     end
   end
 
