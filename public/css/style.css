@@ -431,6 +431,25 @@ div.because-success {
      margin-bottom:10px;
 }
 
+.photo-wrap{
+  float:left;
+  margin: 10px;
+  padding: 5px;
+  border: 1px solid #f2f2f2;
+  width: 200px;
+  text-align: left;
+}
+
+.photo-wrap a{
+    text-decoration: none;
+}
+
+.teamster{
+  display:block;
+  font-size:16px;
+  color:#DF55A0;
+}
+
 /**************************************************************************
 * BEGIN I'M MAP STYLES
 */
@@ -774,7 +793,7 @@ border-bottom: solid 1px #D7EEF4;
     }
 
     #page-wrapper #content-wrapper ul.pages li.about {
-       height:970px;
+       height:2460px;
     }
 
     #page-wrapper #content-wrapper ul.pages li.about #frame {
@@ -798,6 +817,25 @@ border-bottom: solid 1px #D7EEF4;
          color:#CCC;
          line-height:20px;
     }
+    
+    .photo-wrap{
+      float:none;
+      margin: 0px;
+      padding: 5px;
+      border: 1px solid #f2f2f2;
+      width: 300px;
+      text-align: center;
+    }
+
+    .photo-wrap a{
+        text-decoration: none;
+    }
+
+    .teamster{
+      display:block;
+      font-size:16px;
+      color:#DF55A0;
+    }
 
 
 
@@ -811,24 +849,6 @@ border-bottom: solid 1px #D7EEF4;
 
 }
 
-.photo-wrap{
-  float:left;
-  margin: 10px;
-  padding: 5px;
-  border: 1px solid #f2f2f2;
-  width: 200px;
-  text-align: left;
-}
-
-.photo-wrap a{
-    text-decoration: none;
-}
-
-.teamster{
-  display:block;
-  font-size:16px;
-  color:#DF55A0;
-}
 
 /***************
 * Hacks from Ricky... sorry
