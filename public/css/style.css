@@ -830,4 +830,9 @@ border-bottom: solid 1px #D7EEF4;
   color:#DF55A0;
 }
 
-
+/***************
+* Hacks from Ricky... sorry
+*/
+.ui-loader {
+  display: none;
+}
