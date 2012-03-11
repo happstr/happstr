@@ -116,7 +116,7 @@ class Happstr < Sinatra::Base
     }
 CSS
     
-    "<html><head><style>" + css + "</style></head><body>" 
+    "<html><head><style>" + css + "</style></head><body>" +
     "<p>total " + Checkin.count.to_s + "</p>" +
     "<p>with location " + Checkin.where(:source.exists => true).count.to_s + "</p>" +
     "<p>with comment " + Checkin.where(:comment.exists => true).count.to_s + "</p>" +    
