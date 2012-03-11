@@ -86,14 +86,46 @@ class Happstr < Sinatra::Base
   end
 
   get '/latest' do
+    css = <<CSS
+    body {
+      font-size: 100%;
+      font-family: 'BentonSans','Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      background: url(/img/launch/bg.png) #d7eff4;
+      color: #366670;
+      }
+
+    ul {
+        width: 30em;
+        margin: 0 auto;
+        list-style-type: none
+        }
+
+    li {
+        padding: .5em 0 1em 0;
+        margin: .5em;
+        border-bottom: 1px dotted #98C5CE;
+        line-height: 1.5em
+        }
+
+    p { 
+        width: 30em;
+        margin: 0 auto;
+        text-align: center;
+        padding: .5em;
+
+    }
+CSS
+    
+    "<html><head><style>" + css + "</style></head><body>" 
     "<p>total " + Checkin.count.to_s + "</p>" +
     "<p>with location " + Checkin.where(:source.exists => true).count.to_s + "</p>" +
     "<p>with comment " + Checkin.where(:comment.exists => true).count.to_s + "</p>" +    
-    "with comment & location " + Checkin.where(:source.exists => true, :comment.exists => true).count.to_s + "<br />" +        
+    "<p>with comment & location " + Checkin.where(:source.exists => true, :comment.exists => true).count.to_s + "</p>" +        
     "<br /><ul>" +
       Checkin.where(:comment.exists => true).order_by({created_at: -1}).limit(200).to_a.map do |checkin|
         "<li>#{Time.at(checkin.created_at.to_i - 0).strftime("%B %d, %Y @ %H:%M")}\t#{checkin.comment}</li>"
-      end.join("\n") + "<br />"
+      end.join("\n") + "</ul>" +
+    "</body></html>"
   end
 
   put '/api/checkins/:id' do
