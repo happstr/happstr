@@ -122,7 +122,9 @@ CSS
     "<p>with comment " + Checkin.where(:comment.exists => true).count.to_s + "</p>" +    
     "<p>with comment & location " + Checkin.where(:source.exists => true, :comment.exists => true).count.to_s + "</p>" +        
     "<br /><ul>" +
-      Checkin.where(:comment.exists => true).order_by({created_at: -1}).limit(200).to_a.map do |checkin|
+      Checkin.where(:comment.exists => true).order_by({created_at: -1}).limit(200).to_a.select do |checkin|
+        checkin.comment != ''
+      end.map do |checkin|
         "<li>#{Time.at(checkin.created_at.to_i - 0).strftime("%B %d, %Y @ %H:%M")}\t#{checkin.comment}</li>"
       end.join("\n") + "</ul>" +
     "</body></html>"
