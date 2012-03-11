@@ -125,7 +125,7 @@ CSS
       Checkin.where(:comment.exists => true).order_by({created_at: -1}).limit(200).to_a.select do |checkin|
         checkin.comment != ''
       end.map do |checkin|
-        "<li>#{Time.at(checkin.created_at.to_i - 0).strftime("%B %d, %Y @ %H:%M")}\t#{checkin.comment}</li>"
+        "<li><p>#{checkin.comment}\t</p> <span>#{Time.at(checkin.created_at.to_i - 0).strftime("%B %d, %Y @ %H:%M")}</span></li>"
       end.join("\n") + "</ul>" +
     "</body></html>"
   end
