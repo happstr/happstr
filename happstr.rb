@@ -86,13 +86,14 @@ class Happstr < Sinatra::Base
   end
 
   get '/latest' do
-    "total " + Checkin.count.to_s + "<br />" +
-    "with location " + Checkin.where(:source.exists => true).count.to_s + "<br />" +
-    "with comment " + Checkin.where(:comment.exists => true).count.to_s + "<br />" +    
+    "<p>total " + Checkin.count.to_s + "</p>" +
+    "<p>with location " + Checkin.where(:source.exists => true).count.to_s + "</p>" +
+    "<p>with comment " + Checkin.where(:comment.exists => true).count.to_s + "</p>" +    
     "with comment & location " + Checkin.where(:source.exists => true, :comment.exists => true).count.to_s + "<br />" +        
-      Checkin.where(:source.exists => true, :comment.exists => true).order_by({created_at: -1}).limit(40).to_a.map do |checkin|
-        "#{checkin.created_at} #{checkin.source}\t#{checkin.comment}"
-      end.join("<br />")
+    "<br /><ul>" +
+      Checkin.where(:comment.exists => true).order_by({created_at: -1}).limit(200).to_a.map do |checkin|
+        "<li>#{checkin.created_at}\t#{checkin.comment}</li>"
+      end.join("\n") + "<br />"
   end
 
   put '/api/checkins/:id' do
