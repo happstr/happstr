@@ -107,10 +107,10 @@ class Happstr < Sinatra::Base
         line-height: 1.5em
         }
 
-    div p { 
+    div { 
         width: 400px;
-        padding: .5em;
         margin: 0 auto;
+        font-size: .8em;
     }
     
     @font-face {
