@@ -95,7 +95,7 @@ class Happstr < Sinatra::Base
       }
 
     ul {
-        width: 30em;
+        width: 400px;
         margin: 0 auto;
         list-style-type: none
         }
@@ -111,6 +111,10 @@ class Happstr < Sinatra::Base
         width: 400px;
         margin: 0 auto;
         font-size: .8em;
+    }
+    
+    div span {
+      padding-right: .3em;
     }
     
     @font-face {
@@ -149,10 +153,10 @@ CSS
     
     "<html><head><style>" + css + "</style></head><body>" +
     "<h1>The latest and greatest Happstr tap-ins</h1>" +
-    "<div><span>total " + Checkin.count.to_s + "</span>" +
-    "<span>with location " + Checkin.where(:source.exists => true).count.to_s + "</span>" +
-    "<span>with comment " + Checkin.where(:comment.exists => true).count.to_s + "</span>" +    
-    "<span>with comment & location " + Checkin.where(:source.exists => true, :comment.exists => true).count.to_s + "</span></div>" +        
+    "<div><span>total: " + Checkin.count.to_s + "</span>" +
+    "<span>with location: " + Checkin.where(:source.exists => true).count.to_s + "</span>" +
+    "<span>with comment: " + Checkin.where(:comment.exists => true).count.to_s + "</span>" +    
+    "<span>with comment & location: " + Checkin.where(:source.exists => true, :comment.exists => true).count.to_s + "</span></div>" +        
     "<ul>" +
       Checkin.where(:comment.exists => true).order_by({created_at: -1}).limit(200).to_a.select do |checkin|
         checkin.comment != ''
