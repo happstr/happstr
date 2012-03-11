@@ -97,8 +97,8 @@ class Happstr < Sinatra::Base
     ul {
         width: 400px;
         margin: 0 auto;
-        list-style-type: none
-        padding-left: 0
+        list-style-type: none;
+        padding-left: 0;
         }
 
     li {
@@ -113,7 +113,7 @@ class Happstr < Sinatra::Base
         margin: 0 auto .5em auto;
         font-size: .8em;
         border-bottom: 1px dotted #FFF;
-        padding-bottom: .5em;
+        padding-bottom: 1em;
         
     }
     
