@@ -109,8 +109,10 @@ class Happstr < Sinatra::Base
 
     div { 
         width: 400px;
-        margin: 0 auto;
+        margin: 0 auto .5em auto;
         font-size: .8em;
+        border-bottom: 1px dotted #FFF;
+        
     }
     
     div span {
@@ -153,9 +155,9 @@ CSS
     
     "<html><head><style>" + css + "</style></head><body>" +
     "<h1>The latest and greatest Happstr tap-ins</h1>" +
-    "<div><span>total: " + Checkin.count.to_s + "</span>" +
-    "<span>with location: " + Checkin.where(:source.exists => true).count.to_s + "</span>" +
-    "<span>with comment: " + Checkin.where(:comment.exists => true).count.to_s + "</span>" +    
+    "<div><span>total: " + Checkin.count.to_s + "/ </span>" +
+    "<span>with location: " + Checkin.where(:source.exists => true).count.to_s + "/ </span>" +
+    "<span>with comment: " + Checkin.where(:comment.exists => true).count.to_s + "/ </span>" +    
     "<span>with comment & location: " + Checkin.where(:source.exists => true, :comment.exists => true).count.to_s + "</span></div>" +        
     "<ul>" +
       Checkin.where(:comment.exists => true).order_by({created_at: -1}).limit(200).to_a.select do |checkin|
