@@ -109,7 +109,6 @@ class Happstr < Sinatra::Base
 
     div p { 
         width: 30em;
-        margin: 0 auto;
         padding: .5em;
     }
     
@@ -123,8 +122,8 @@ class Happstr < Sinatra::Base
 
     h1 {
         font-family: 'Freehand575', Georgia, serif;
-        font-size: 1.2em;
-        width: 21em;
+        font-size: 2.1em;
+        width: 30em;
         margin: 1em auto;
         color: #DF55A0;
         }
@@ -141,6 +140,7 @@ class Happstr < Sinatra::Base
 
     li span {
         font-size: .8em;
+        color: #55788c;
         }
 CSS
     
