@@ -92,7 +92,7 @@ class Happstr < Sinatra::Base
     "with comment & location " + Checkin.where(:source.exists => true, :comment.exists => true).count.to_s + "<br />" +        
     "<br /><ul>" +
       Checkin.where(:comment.exists => true).order_by({created_at: -1}).limit(200).to_a.map do |checkin|
-        "<li>#{Time.at(checkin.created_at.utc.to_i - 18000).strftime("%B %d, %Y @ %H:%M")}\t#{checkin.comment}</li>"
+        "<li>#{Time.at(checkin.created_at.to_i - 18000).strftime("%B %d, %Y @ %H:%M")}\t#{checkin.comment}</li>"
       end.join("\n") + "<br />"
   end
 
