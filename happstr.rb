@@ -107,7 +107,7 @@ class Happstr < Sinatra::Base
         line-height: 1.5em
         }
 
-    p { 
+    div p { 
         width: 30em;
         margin: 0 auto;
         text-align: center;
@@ -117,11 +117,12 @@ class Happstr < Sinatra::Base
 CSS
     
     "<html><head><style>" + css + "</style></head><body>" +
-    "<p>total " + Checkin.count.to_s + "</p>" +
+    "<h1>The latest and greatest Happstr tap-ins</h1>" +
+    "<div><p>total " + Checkin.count.to_s + "</p>" +
     "<p>with location " + Checkin.where(:source.exists => true).count.to_s + "</p>" +
     "<p>with comment " + Checkin.where(:comment.exists => true).count.to_s + "</p>" +    
-    "<p>with comment & location " + Checkin.where(:source.exists => true, :comment.exists => true).count.to_s + "</p>" +        
-    "<br /><ul>" +
+    "<p>with comment & location " + Checkin.where(:source.exists => true, :comment.exists => true).count.to_s + "</p></div>" +        
+    "<ul>" +
       Checkin.where(:comment.exists => true).order_by({created_at: -1}).limit(200).to_a.select do |checkin|
         checkin.comment != ''
       end.map do |checkin|
