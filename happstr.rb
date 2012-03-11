@@ -146,7 +146,7 @@ class Happstr < Sinatra::Base
     li p {
         margin-top: 0;
         font-size: 1.2em;
-        margin-bottom: .1em
+        margin-bottom: .1em;
         text-shadow: 0 1px 0 #FFF;
         }
 
