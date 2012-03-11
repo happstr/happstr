@@ -86,7 +86,7 @@ class Happstr < Sinatra::Base
   end
 
   get '/latest' do
-    Checkin.count().to_s + "<br />" +
+    Checkin.count(:source.exists => true, :comment.exists => true).to_s + "<br />" +
       Checkin.order_by({created_at: -1}).limit(40).to_a.map do |checkin|
         "#{checkin.created_at} #{checkin.source}\t#{checkin.comment}"
       end.join("<br />")
