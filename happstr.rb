@@ -103,7 +103,7 @@ class Happstr < Sinatra::Base
 
     li {
         padding: .5em 0 1em 0;
-        margin: .5em;
+        margin: .5em 0;
         border-bottom: 1px dotted #98C5CE;
         line-height: 1.5em
         }
@@ -146,7 +146,7 @@ class Happstr < Sinatra::Base
     li p {
         margin-top: 0;
         font-size: 1.2em;
-        margin-bottom: .2em
+        margin-bottom: .1em
         }
 
     li span {
