@@ -110,10 +110,38 @@ class Happstr < Sinatra::Base
     div p { 
         width: 30em;
         margin: 0 auto;
-        text-align: center;
         padding: .5em;
-
     }
+    
+    @font-face {
+      font-family: 'Freehand575';
+      src: url('/fonts/208F23_0_0.eot'),
+           url('/fonts/208F23_0_0.eot?#iefix') format('embedded-opentype'),
+           url('/fonts/208F23_0_0.woff') format('woff'),
+           url('/fonts/208F23_0_0.ttf') format('truetype');
+           }
+
+    h1 {
+        font-family: 'Freehand575', Georgia, serif;
+        font-size: 1.2em;
+        width: 21em;
+        margin: 1em auto;
+        color: #DF55A0;
+        }
+
+    div p {
+        font-size: .8em;
+        }
+
+    li p {
+        margin-top: 0;
+        font-size: 1.2em;
+        margin-bottom: .2em
+        }
+
+    li span {
+        font-size: .8em;
+        }
 CSS
     
     "<html><head><style>" + css + "</style></head><body>" +
