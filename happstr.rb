@@ -64,7 +64,7 @@ class Happstr < Sinatra::Base
       "Uhm ... you need to pass ?lat=&long= betwen -180..180 and optional range"
     else
       #Checkin.where(:source.near => [[lat, lon], range]).limit(500).to_a.to_json
-      Checkin.where(:comment.exists => true).order_by({created_at: -1}).limit(500).to_a.to_json
+      Checkin.where(:comment.exists => true).order_by({created_at: -1}).limit(1000).to_a.to_json
     end
   end
 
