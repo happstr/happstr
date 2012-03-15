@@ -108,19 +108,19 @@ class Happstr < Sinatra::Base
         line-height: 1.5em
         }
 
-    div { 
+    div {
         width: 400px;
         margin: 0 auto 1em auto;
         font-size: .8em;
         border-bottom: 1px dotted #FFF;
         padding-bottom: 2em;
-        
+
     }
-    
+
     div span {
       padding-right: .3em;
     }
-    
+
     @font-face {
       font-family: 'Freehand575';
       src: url('/fonts/208F23_0_0.eot'),
@@ -155,13 +155,13 @@ class Happstr < Sinatra::Base
         color: #55788c;
         }
 CSS
-    
+
     "<html><head><style>" + css + "</style></head><body>" +
     "<h1>The latest and greatest Happstr tap-ins</h1>" +
     "<div><span>total: " + Checkin.count.to_s + "/ </span>" +
     "<span>with location: " + Checkin.where(:source.exists => true).count.to_s + "/ </span>" +
-    "<span>with comment: " + Checkin.where(:comment.exists => true).count.to_s + "/ </span>" +    
-    "<span>with comment & location: " + Checkin.where(:source.exists => true, :comment.exists => true).count.to_s + "</span></div>" +        
+    "<span>with comment: " + Checkin.where(:comment.exists => true).count.to_s + "/ </span>" +
+    "<span>with comment & location: " + Checkin.where(:source.exists => true, :comment.exists => true).count.to_s + "</span></div>" +
     "<ul>" +
       Checkin.where(:comment.exists => true).order_by({created_at: -1}).limit(200).to_a.select do |checkin|
         checkin.comment != ''
