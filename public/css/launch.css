@@ -61,6 +61,15 @@ ul li {
   clear: both;
 }
 
+.announce {
+  font-size: .7em;
+  line-height: 1.2em;
+  padding: .8em 0;
+  border-top: 1px dotted #CCC;
+  border-bottom: 1px dotted #CCC;
+  color: #666;
+}
+
 label {
   color: #333;
 }
@@ -107,7 +116,7 @@ a:hover {
   cursor: pointer;
 }
 
-#mce-EMAIL, #mce-HAPPY {
+#mce-EMAIL, #mce-HAPPY, #mce-TWITTER {
   -moz-box-shadow: inset 0 0 5px #CCC;
   -webkit-box-shadow: inset 0 0 5px #CCC;
   box-shadow: inner 0 0 5px #CCC;
