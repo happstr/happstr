@@ -34,7 +34,7 @@ class Happstr < Sinatra::Base
   # Routes
   #
   get '/' do
-    send_file File.join(settings.public_folder, 'html/index.html')
+    redirect '/prototype'
   end
 
   get '/prototype' do
@@ -43,6 +43,10 @@ class Happstr < Sinatra::Base
 
   get '/beta' do
     redirect '/prototype'
+  end
+
+  get '/more' do
+    send_file File.join(settings.public_folder, 'html/index.html')
   end
 
   get '/map' do
@@ -197,6 +201,8 @@ CSS
   # Development helpers
 
   get '/dev/setup' do
+    return true # remove to actually run this
+
     Checkin.create_indexes
 
     "done"
